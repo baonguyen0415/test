@@ -1,0 +1,43 @@
+  {%- case type -%}
+    {%- when 'infinite' -%}
+      <infinite-button
+        data-current-page="{{paginate.current_page}}"
+        {%- if paginate.next != blank -%}data-next-page="1"{%- else -%}data-next-page="0"{%- endif -%} >
+        <button class="btn btn-1 w-100 btn-load-infinite">
+          <span>{{ 'pages.collection.load_more' | t}}</span>
+          {%- render 'svg' type: 'is-loading' -%}
+        </button>
+      </infinite-button>
+    {%- else -%}
+
+      {%- if paginate.pages > 1 -%}
+        <div class="pagination-holder">
+          <ul class="pagination">
+            <li{% unless paginate.previous %} class="disabled"{% endunless %}>
+              <a href="{{ paginate.previous.url | append: id}}" class="prev">
+                {{'general.pagination.previous' | t }}
+              </a>
+            </li>
+
+            {%- for part in paginate.parts -%}
+              {%- if part.is_link -%}
+                <li><a href="{{ part.url | append: id }}">{{ part.title }}</a></li>
+              {%- else -%}
+                {%- if part.title == '&hellip;' -%}
+                <li class="ellipsis"><span>{{ part.title }}</span></li>
+                {%- else -%}
+                <li class="active"><a href="javascript:;">{{ part.title }}</a></li>
+                {%- endif -%}
+              {%- endif -%}
+            {%- endfor -%}
+
+            <li{% unless paginate.next %} class="disabled"{% endunless %}>
+              <a href="{{ paginate.next.url | append: id}}" class="next">
+                {{'general.pagination.next' | t }}
+              </a>
+            </li>
+          </ul>
+        </div>
+      {%- endif -%}
+    {% comment %} end {% endcomment %}
+  {%- endcase -%}

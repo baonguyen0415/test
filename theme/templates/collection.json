@@ -1,0 +1,32 @@
+{
+  "wrapper": "div.page-template.page-collection-template",
+  "sections": {
+    "breadcrumb": {
+      "type": "breadcrumb",
+      "settings": {
+        "visible": true,
+        "boxed": true,
+        "margin": "0px 0px 30px 0px",
+        "padding": "16px 0px 16px 0px",
+        "bg_full": true,
+        "bg_color": "#ffffff",
+        "text_color": "#a9a9a9",
+        "text_active_color": "#302f2f"
+      }
+    },
+    "main": {
+      "type": "collection-template",
+      "settings": {
+        "items_resp": "3,3,2",
+        "items_spacing": "30px,15px,15px",
+        "enable_filter": true,
+        "show_products_showing": true,
+        "enable_sort": true
+      }
+    }
+  },
+  "order": [
+    "breadcrumb",
+    "main"
+  ]
+}

@@ -1,0 +1,512 @@
+{
+  "sections": {
+    "1626927761d51f20c1": {
+      "type": "section-single-banner",
+      "settings": {
+        "section_height": "366px, 260px",
+        "boxed": true,
+        "margin": "",
+        "padding": "",
+        "bg_full": true,
+        "bg_color": "",
+        "bg_image_desk": "shopify:\/\/shop_images\/Rectangle_67.jpg",
+        "bg_size_desk": "cover",
+        "bg_position_desk": "center center",
+        "bg_repeat_desk": "no-repeat",
+        "bg_image_mobi": "shopify:\/\/shop_images\/single-banner-mobile.png",
+        "bg_size_mobi": "cover",
+        "bg_position_mobi": "center center",
+        "bg_repeat_mobi": "no-repeat",
+        "alignment": "center",
+        "heading": "<p><em>FIND THE RIGHT PARTS FASTER<\/em><\/p>",
+        "subtext": "Over 100,000 Auto and Truck Parts",
+        "btn_label": "Select a Vehicle",
+        "btn_link": "",
+        "btn_style": "2"
+      }
+    },
+    "1626367222dee45e5b": {
+      "type": "section-iconbox",
+      "blocks": {
+        "1626367222dee45e5b-0": {
+          "type": "block-item",
+          "settings": {
+            "type": "image",
+            "image": "shopify:\/\/shop_images\/image_10.png",
+            "svg": "<svg width=\"20\" height=\"20\" viewbox=\"0 0 20 20\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M3.2 4C2.53726 4 2 4.51356 2 5.14706V13.5588C2 14.1923 2.53726 14.7059 3.2 14.7059H3.6C3.6 15.9729 4.67452 17 6 17C7.32548 17 8.4 15.9729 8.4 14.7059H11.6C11.6 15.9729 12.6745 17 14 17C15.3255 17 16.4 15.9729 16.4 14.7059H16.8C17.4627 14.7059 18 14.1923 18 13.5588V10.9883C18 10.7804 17.9409 10.5764 17.829 10.3981L15.6025 6.85102C15.3856 6.50552 14.995 6.29412 14.5735 6.29412H12.4V5.14706C12.4 4.51356 11.8627 4 11.2 4H3.2ZM14 15.4706C13.5582 15.4706 13.2 15.1282 13.2 14.7059C13.2 14.2835 13.5582 13.9412 14 13.9412C14.4418 13.9412 14.8 14.2835 14.8 14.7059C14.8 15.1282 14.4418 15.4706 14 15.4706ZM5.2 14.7059C5.2 15.1282 5.55817 15.4706 6 15.4706C6.44183 15.4706 6.8 15.1282 6.8 14.7059C6.8 14.2835 6.44183 13.9412 6 13.9412C5.55817 13.9412 5.2 14.2835 5.2 14.7059ZM15.787 10.1176H12.4V7.82353H14.347L15.787 10.1176Z\" fill=\"#FDB819\"><\/path>\n<\/svg>",
+            "title": "FREE DELIVERY",
+            "text": "Worldwide from $75"
+          }
+        },
+        "1626367222dee45e5b-1": {
+          "type": "block-item",
+          "settings": {
+            "type": "image",
+            "image": "shopify:\/\/shop_images\/image_11.png",
+            "svg": "<svg width=\"20\" height=\"20\" viewbox=\"0 0 20 20\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<path d=\"M15.2095 6C13.4907 4.45251 12.017 3.6 10 3.6C6.46503 3.6 3.6 6.46503 3.6 10C3.6 13.535 6.46503 16.4 10 16.4C10.4418 16.4 10.8 16.7582 10.8 17.2C10.8 17.6418 10.4418 18 10 18C5.58137 18 2 14.4186 2 10C2 5.58137 5.58137 2 10 2C12.6375 2 14.5149 3.19709 16.4 4.91778V2.8C16.4 2.35817 16.7582 2 17.2 2C17.6418 2 18 2.35817 18 2.8V6.79986C18 6.90833 17.9784 7.0119 17.9393 7.10623C17.9005 7.19989 17.8432 7.28768 17.7674 7.36399C17.7663 7.36512 17.7651 7.36625 17.764 7.36738C17.6877 7.44324 17.5999 7.50055 17.5062 7.5393C17.4119 7.57841 17.3085 7.6 17.2 7.6H13.2C12.7582 7.6 12.4 7.24183 12.4 6.8C12.4 6.35817 12.7582 6 13.2 6H15.2095Z\" fill=\"#FDB819\"><\/path>\n<\/svg>",
+            "title": "EASY RETURNS",
+            "text": "365 days for free returns"
+          }
+        },
+        "1626367222dee45e5b-2": {
+          "type": "block-item",
+          "settings": {
+            "type": "image",
+            "image": "shopify:\/\/shop_images\/image_12.png",
+            "svg": "<svg width=\"20\" height=\"20\" viewbox=\"0 0 20 20\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<path d=\"M2 6.07143C2 5.47969 2.53726 5 3.2 5H16.8C17.4627 5 18 5.47969 18 6.07143V7.14286L2 7.14286V6.07143Z\" fill=\"#FDB819\"><\/path>\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M2 8.57143V13.9286C2 14.5203 2.53726 15 3.2 15H16.8C17.4627 15 18 14.5203 18 13.9286V8.57143L2 8.57143ZM7.6 11.4286H3.6V10H7.6V11.4286Z\" fill=\"#FDB819\"><\/path>\n<\/svg>",
+            "title": "COMFORT PAYMENTS",
+            "text": "Credit Cards Available"
+          }
+        },
+        "1626367222dee45e5b-3": {
+          "type": "block-item",
+          "settings": {
+            "type": "image",
+            "image": "shopify:\/\/shop_images\/image_13.png",
+            "svg": "<svg width=\"20\" height=\"20\" viewbox=\"0 0 20 20\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\n<path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M15.6 5.76316C15.6 6.20377 15.5177 6.60044 15.3554 6.94737H16.8C17.4627 6.94737 18 7.47756 18 8.13158V10.1053H2V8.13158C2 7.47756 2.53726 6.94737 3.2 6.94737H4.64462C4.48225 6.60044 4.4 6.20377 4.4 5.76316C4.4 4.16101 5.82665 3 7.41538 3C8.34787 3 9.33421 3.4308 10 4.2071C10.6658 3.4308 11.6521 3 12.5846 3C14.1733 3 15.6 4.16101 15.6 5.76316ZM6 5.76316C6 5.18109 6.55242 4.57895 7.41538 4.57895C8.25522 4.57895 9.2 5.26544 9.2 6.42105V6.94737H8.52308C7.87904 6.94737 7.19821 6.93861 6.67878 6.74947C6.43675 6.66134 6.27997 6.55022 6.18157 6.42365C6.08928 6.30493 6 6.11123 6 5.76316ZM11.4769 6.94737H10.8V6.42105C10.8 5.26544 11.7448 4.57895 12.5846 4.57895C13.4476 4.57895 14 5.18109 14 5.76316C14 6.11123 13.9107 6.30493 13.8184 6.42365C13.72 6.55022 13.5632 6.66134 13.3212 6.74947C12.8018 6.93861 12.121 6.94737 11.4769 6.94737Z\" fill=\"#FDB819\"><\/path>\n<path d=\"M9.2 18V11.6842H2.8V16.8158C2.8 17.4711 3.336 18 4 18H9.2Z\" fill=\"#FDB819\"><\/path>\n<path d=\"M10.8 18V11.6842H17.2V16.8158C17.2 17.4711 16.664 18 16 18H10.8Z\" fill=\"#FDB819\"><\/path>\n<\/svg>",
+            "title": "FREE GIFTS",
+            "text": "Get gifts and discounts"
+          }
+        }
+      },
+      "block_order": [
+        "1626367222dee45e5b-0",
+        "1626367222dee45e5b-1",
+        "1626367222dee45e5b-2",
+        "1626367222dee45e5b-3"
+      ],
+      "settings": {
+        "boxed": true,
+        "margin": "0 0 30px",
+        "padding": "28px 0",
+        "items_resp": "4,2,2",
+        "items_spacing": "30px",
+        "bg_full": true,
+        "bg_color": "#ffffff"
+      }
+    },
+    "162694877265317409": {
+      "type": "section-image-gallery",
+      "blocks": {
+        "ba5c6102-0cda-4cb2-8dc7-05982d72f3cb": {
+          "type": "block-style",
+          "settings": {
+            "title_color": "#1e1e1e",
+            "title_font_size": "18px",
+            "title_font_weight": 500,
+            "title_line_height": "20px",
+            "subtext_color": "#626262",
+            "subtext_font_size": "14px",
+            "subtext_font_weight": 400,
+            "subtext_line_height": "20px"
+          }
+        },
+        "162694877265317409-0": {
+          "type": "block-item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_68.jpg",
+            "title": "FIND THE DEAL THAT'S RIGHT FOR YOU",
+            "subtext": "We've got everything you need for your vehicle"
+          }
+        },
+        "162694877265317409-1": {
+          "type": "block-item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_69.jpg",
+            "title": "BRAKEBEST BRAKE PAD & ROTORS",
+            "subtext": "Long Life, Consistent Performance"
+          }
+        },
+        "162694877265317409-2": {
+          "type": "block-item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_70.jpg",
+            "title": "10% OFF FOR CARD MEMBERS!",
+            "subtext": "Show your card in store and get 10% off on your purchases!"
+          }
+        }
+      },
+      "block_order": [
+        "ba5c6102-0cda-4cb2-8dc7-05982d72f3cb",
+        "162694877265317409-0",
+        "162694877265317409-1",
+        "162694877265317409-2"
+      ],
+      "settings": {
+        "boxed": true,
+        "margin": "0px 0px 60px 0px",
+        "padding": "",
+        "items_resp": "3,2,1.4",
+        "items_spacing": "30px,15px",
+        "bg_full": true,
+        "bg_color": "rgba(0,0,0,0)",
+        "heading": ""
+      }
+    },
+    "1626282993d6a03c13": {
+      "type": "featured-collection",
+      "settings": {
+        "boxed": true,
+        "margin": "0 0 50px, 0 0 40px",
+        "padding": "",
+        "collection": "auto-body-styling-accessories",
+        "items_resp": "4,3,1.5",
+        "items_spacing": "28px,15px,15px",
+        "limit": 10,
+        "bg_full": true,
+        "bg_color": "",
+        "heading": "<p><strong>WHAT WE<\/strong> OFFER<\/p>",
+        "loop": false,
+        "controls": true,
+        "dots": false,
+        "autoplay": false,
+        "autoplay_timeout": 4
+      }
+    },
+    "1626428744f4dafb00": {
+      "type": "section-banner-multiple",
+      "blocks": {
+        "7a8684aa-96b6-4336-9082-0e5d78d749f7": {
+          "type": "banner-item",
+          "settings": {
+            "title": "Lamps & Lights",
+            "link": "shopify:\/\/collections\/all",
+            "image": "shopify:\/\/shop_images\/image.jpg",
+            "type": "image",
+            "sub_image": "shopify:\/\/shop_images\/Group_151.png",
+            "svg": "",
+            "horizontal_position": 5,
+            "vertical_position": 50
+          }
+        },
+        "02eac535-6f45-4b08-a5a4-94c46a9d9273": {
+          "type": "banner-item",
+          "settings": {
+            "title": "High Performance <br>Gloves",
+            "link": "shopify:\/\/collections\/auto-body-styling-accessories",
+            "image": "shopify:\/\/shop_images\/image_1.jpg",
+            "type": "image",
+            "sub_image": "shopify:\/\/shop_images\/Group_153.png",
+            "svg": "",
+            "horizontal_position": 5,
+            "vertical_position": 50
+          }
+        },
+        "5c5a1bcd-3a47-4fa0-8936-e9c9dcdb06c5": {
+          "type": "banner-item",
+          "settings": {
+            "title": "Seats, Seat Covers & <br>  Accessories",
+            "link": "shopify:\/\/collections\/fuel-tanks-components",
+            "image": "shopify:\/\/shop_images\/image_2.jpg",
+            "type": "image",
+            "sub_image": "shopify:\/\/shop_images\/Group_150.png",
+            "svg": "",
+            "horizontal_position": 5,
+            "vertical_position": 50
+          }
+        },
+        "aef0c18d-3585-4d6a-850f-efb0b0831598": {
+          "type": "banner-item",
+          "settings": {
+            "title": "OE Replica Wheels",
+            "link": "shopify:\/\/collections\/hoods-components",
+            "image": "shopify:\/\/shop_images\/image_3.jpg",
+            "type": "image",
+            "sub_image": "shopify:\/\/shop_images\/Group_154.png",
+            "svg": "",
+            "horizontal_position": 10,
+            "vertical_position": 50
+          }
+        }
+      },
+      "block_order": [
+        "7a8684aa-96b6-4336-9082-0e5d78d749f7",
+        "02eac535-6f45-4b08-a5a4-94c46a9d9273",
+        "5c5a1bcd-3a47-4fa0-8936-e9c9dcdb06c5",
+        "aef0c18d-3585-4d6a-850f-efb0b0831598"
+      ],
+      "settings": {
+        "boxed": true,
+        "margin": "0 0 60px, 0 0 40px",
+        "padding": "",
+        "items_resp": "4,2,1.4",
+        "items_spacing": "30px,15px",
+        "bg_full": true,
+        "bg_color": "",
+        "heading": "<p><strong>FEATURED <\/strong>DEALS<\/p>",
+        "block_bg_color": "rgba(0,0,0,0)",
+        "block_text_color": "#302f2f"
+      }
+    },
+    "162654378867a555a7": {
+      "type": "section-single-banner",
+      "settings": {
+        "section_height": "260px",
+        "boxed": true,
+        "margin": "0 0 62px",
+        "padding": "",
+        "bg_full": true,
+        "bg_color": "#ff9923",
+        "bg_image_desk": "shopify:\/\/shop_images\/image_4.jpg",
+        "bg_size_desk": "cover",
+        "bg_position_desk": "center center",
+        "bg_repeat_desk": "no-repeat",
+        "bg_image_mobi": "shopify:\/\/shop_images\/Rectangle_75.jpg",
+        "bg_size_mobi": "cover",
+        "bg_position_mobi": "center center",
+        "bg_repeat_mobi": "no-repeat",
+        "alignment": "center",
+        "heading": "<p>NEWS, TIPS & REBATES<\/p>",
+        "subtext": "be the firs to now",
+        "btn_label": "Subscribe to Our Newsletter",
+        "btn_link": "shopify:\/\/collections\/all",
+        "btn_style": "2"
+      }
+    },
+    "1626506000c981a6c5": {
+      "type": "section-featured-collections-list",
+      "blocks": {
+        "1626506000c981a6c5-0": {
+          "type": "block-custom",
+          "settings": {
+            "title": "Body Parts & Mirrors",
+            "image": "shopify:\/\/shop_images\/Rectangle-2.png",
+            "link": "shopify:\/\/collections\/mirrors-components"
+          }
+        },
+        "1626506000c981a6c5-1": {
+          "type": "block-custom",
+          "settings": {
+            "title": "Headlights & Lighting",
+            "image": "shopify:\/\/shop_images\/image_30.png",
+            "link": "shopify:\/\/collections\/auto-body-styling-accessories"
+          }
+        },
+        "1626506000c981a6c5-2": {
+          "type": "block-custom",
+          "settings": {
+            "title": "Engine & Drivetrain",
+            "image": "shopify:\/\/shop_images\/image_31.png",
+            "link": "shopify:\/\/collections\/lug-nuts-bolts"
+          }
+        },
+        "1626506000c981a6c5-3": {
+          "type": "block-custom",
+          "settings": {
+            "title": "Brakes, Suspension  & Steering",
+            "image": "shopify:\/\/shop_images\/image_32.png",
+            "link": "shopify:\/\/collections\/hoods-components"
+          }
+        },
+        "1626506000c981a6c5-4": {
+          "type": "block-custom",
+          "settings": {
+            "title": "Interior Accessories",
+            "image": "shopify:\/\/shop_images\/Rectangle-1.png",
+            "link": "shopify:\/\/collections\/hoods-components"
+          }
+        },
+        "1626506000c981a6c5-5": {
+          "type": "block-custom",
+          "settings": {
+            "title": "Exterior Accessories",
+            "image": "shopify:\/\/shop_images\/Rectangle.png",
+            "link": "shopify:\/\/collections\/bumpers-components"
+          }
+        },
+        "1626506000c981a6c5-6": {
+          "type": "block-custom",
+          "settings": {
+            "title": "Wheels",
+            "image": "shopify:\/\/shop_images\/image_35.png",
+            "link": "shopify:\/\/collections\/lug-nuts-bolts"
+          }
+        },
+        "acd39a8b-38ac-4a98-a091-5e433cdccf8b": {
+          "type": "block-custom",
+          "settings": {
+            "title": "Tools & Garage",
+            "image": "shopify:\/\/shop_images\/image_36.png",
+            "link": "shopify:\/\/collections\/tailgates-components"
+          }
+        },
+        "070e6b00-fcd1-4d89-9d36-3e550baaa460": {
+          "type": "banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_75.jpg",
+            "heading": "<p>FENDERS &<br\/>COMPONENTS DEALS<\/p>",
+            "heading_color": "#ffffff",
+            "heading_font_size": "30px",
+            "heading_font_weight": 500,
+            "heading_line_height": "36px",
+            "subtext": "<p>Explore our extensive catalog with OVER 5,800 parts<\/p>",
+            "subtext_color": "#ffffff",
+            "subtext_font_size": "16px",
+            "subtext_font_weight": 400,
+            "btn_label": "Shop Now",
+            "btn_link": "shopify:\/\/collections\/all",
+            "btn_style": 1,
+            "banner_content_align": "left",
+            "horizontal_position": 35,
+            "vertical_position": 10
+          }
+        }
+      },
+      "block_order": [
+        "1626506000c981a6c5-0",
+        "1626506000c981a6c5-1",
+        "1626506000c981a6c5-2",
+        "1626506000c981a6c5-3",
+        "1626506000c981a6c5-4",
+        "1626506000c981a6c5-5",
+        "1626506000c981a6c5-6",
+        "acd39a8b-38ac-4a98-a091-5e433cdccf8b",
+        "070e6b00-fcd1-4d89-9d36-3e550baaa460"
+      ],
+      "settings": {
+        "boxed": true,
+        "margin": "0 0 60px, 0 0 40px",
+        "padding": "",
+        "items_resp": "4,2",
+        "items_spacing": "30px,15px",
+        "bg_full": true,
+        "bg_color": "",
+        "heading": "<p><strong>SHOP BY<\/strong> CATEGORIES<\/p>"
+      }
+    },
+    "162634624706204017": {
+      "type": "section-featured-blog",
+      "settings": {
+        "boxed": true,
+        "margin": "0 0 60px, 0 0 30px",
+        "padding": "",
+        "blog": "in-the-news",
+        "limit": 5,
+        "items_resp": "3,2,1.5",
+        "items_spacing": "30px,15px,15px",
+        "bg_full": true,
+        "bg_color": "rgba(0,0,0,0)",
+        "heading": "<p><strong>OUR<\/strong> BLOGS<\/p>",
+        "loop": false,
+        "controls": false,
+        "dots": false,
+        "autoplay": false,
+        "autoplay_timeout": 4
+      }
+    },
+    "1626286860608670fa": {
+      "type": "section-logo-list",
+      "blocks": {
+        "f3aef851-81e8-41b6-81fd-6910ee7341e7": {
+          "type": "block-item",
+          "settings": {
+            "type": "image",
+            "image": "shopify:\/\/shop_images\/logo-1.png",
+            "svg": "",
+            "link": "shopify:\/\/collections\/auto-body-styling-accessories"
+          }
+        },
+        "e30f6d3e-1719-4dca-881d-6234b6d13797": {
+          "type": "block-item",
+          "settings": {
+            "type": "image",
+            "image": "shopify:\/\/shop_images\/logog-2.png",
+            "svg": "",
+            "link": "shopify:\/\/collections\/auto-body-styling-accessories"
+          }
+        },
+        "8a7afed3-0375-4e4b-93fe-badd3531b3f8": {
+          "type": "block-item",
+          "settings": {
+            "type": "image",
+            "image": "shopify:\/\/shop_images\/logog-3.png",
+            "svg": "",
+            "link": "shopify:\/\/collections\/bumpers-components"
+          }
+        },
+        "94eef3f7-6104-4b7e-aa55-504a217e5e4d": {
+          "type": "block-item",
+          "settings": {
+            "type": "image",
+            "image": "shopify:\/\/shop_images\/logog-4.png",
+            "svg": "",
+            "link": "shopify:\/\/collections\/fuel-tanks-components"
+          }
+        },
+        "a49465ef-663d-4c05-aa54-909a6bdd0c6c": {
+          "type": "block-item",
+          "settings": {
+            "type": "image",
+            "image": "shopify:\/\/shop_images\/logog-2.png",
+            "svg": "",
+            "link": "shopify:\/\/collections\/tailgates-components"
+          }
+        },
+        "d1777ae9-a3df-41b2-8598-97987dddf3a3": {
+          "type": "block-item",
+          "settings": {
+            "type": "image",
+            "image": "shopify:\/\/shop_images\/logog-3.png",
+            "svg": "",
+            "link": "shopify:\/\/collections\/lug-nuts-bolts"
+          }
+        },
+        "ae3c27fa-612d-4b90-a0b7-e89270970575": {
+          "type": "block-item",
+          "settings": {
+            "type": "image",
+            "image": "shopify:\/\/shop_images\/logog-4.png",
+            "svg": "",
+            "link": "shopify:\/\/collections\/auto-body-styling-accessories"
+          }
+        }
+      },
+      "block_order": [
+        "f3aef851-81e8-41b6-81fd-6910ee7341e7",
+        "e30f6d3e-1719-4dca-881d-6234b6d13797",
+        "8a7afed3-0375-4e4b-93fe-badd3531b3f8",
+        "94eef3f7-6104-4b7e-aa55-504a217e5e4d",
+        "a49465ef-663d-4c05-aa54-909a6bdd0c6c",
+        "d1777ae9-a3df-41b2-8598-97987dddf3a3",
+        "ae3c27fa-612d-4b90-a0b7-e89270970575"
+      ],
+      "settings": {
+        "title": "<p>WE HAVE OVER <strong>200<br\/>CRETIFIED PARTNERS<br\/><\/strong><\/p>",
+        "title_font_size": "30px",
+        "titel_color": "#ffffff",
+        "boxed": true,
+        "margin": "",
+        "padding": "58px 0px",
+        "items_resp": "4,4,3.5",
+        "items_spacing": "30px",
+        "bg_full": true,
+        "bg_color": "#fdb819",
+        "bg_image": "shopify:\/\/shop_images\/tyres-mark.png",
+        "bg_size": "auto",
+        "bg_position": "right center",
+        "bg_repeat": "no-repeat",
+        "loop": false,
+        "controls": true,
+        "dots": false,
+        "autoplay": false,
+        "autoplay_timeout": 4
+      }
+    },
+    "1638093346563522e9": {
+      "type": "app-extension",
+      "settings": {}
+    }
+  },
+  "order": [
+    "1626927761d51f20c1",
+    "1626367222dee45e5b",
+    "162694877265317409",
+    "1626282993d6a03c13",
+    "1626428744f4dafb00",
+    "162654378867a555a7",
+    "1626506000c981a6c5",
+    "162634624706204017",
+    "1626286860608670fa",
+    "1638093346563522e9"
+  ]
+}

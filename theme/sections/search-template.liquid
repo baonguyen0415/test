@@ -1,0 +1,124 @@
+<link rel="stylesheet" href="{{'pages.css' | asset_url}}" media="print" onload="this.media='all'">
+
+{%- liquid
+  assign q = search.terms | split: 'product_type:' | first
+  assign product_results = search.results | where: 'object_type', 'product'
+  assign article_results = search.results | where: 'object_type', 'article'
+  assign page_results = search.results | where: 'object_type', 'page'
+  assign items_per_page = section.settings.items_per_page
+  assign items_resp = section.settings.items_resp
+  assign items_spacing = '0'
+  -%}
+
+<style>
+  {%- render 'grid-spacing' value: items_spacing , preClassID: '.section-search-template .d-grid'-%}
+</style>
+
+<div class="section-search-template" id="section-{{section.id}}">
+  <div class="section-body">
+    
+    {% if search.performed %}
+      {%- if search.results_count > 0 -%}
+        {%- paginate search.results by items_per_page -%}
+
+        <div class="search-results search-results--products">
+          <h3 class="search-results_title text-center">
+            {{ 'pages.search.heading' | t: count: search.results_count }}: {{ 'pages.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
+          </h3>
+
+          <div class="search-results_inner {% render 'grid-class' value: items_resp -%}">
+            {%- for product in search.results -%}
+              {%- if product.object_type == 'product' -%}
+                <div class="product-product-grid">
+                  {%- render 'product-item' product: product -%}
+                </div>
+              {%- else -%}
+                <article class="article-product-grid">
+                  <div class="article-product-grid_inner">
+                    {%- if product.image -%}
+                      <div class="article_image">
+                        <a href="{{product.url}}">{%- render 'image-style' image: product.image , limit: 540 -%}</a>
+                      </div>
+                    {%- endif -%}
+                      <div class="article-content">
+                        <h6><a href="{{ product.url }}">{{ product.title }}</a></h6>
+                        <div class="meta-data">
+                          <span class="date">{{ product.published_at | date: "%d %b, %Y" }}</span>
+                        </div>
+                      </div>
+                    </div>
+                </article>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+
+        {%- if paginate.pages > 1 -%}
+          {%- include 'pagination' -%}
+        {%- endif %}
+
+        {%- endpaginate -%}
+
+      {%- else -%}
+        <div class="search-empty text-center">
+          <h3 class="search-empty_title">{{ 'pages.search.empty_title' | t}}</h3>
+          <div class="search-empty_subtitle">{{ 'pages.search.empty_subtitle' | t: terms: q}}</div>
+          <form action="/search" class="search-form d-flex justify-content-center" methos="get">
+            <input type="hidden" value="{{settings.search_type}}" name="type">
+            <input type="hidden" value="{{settings.search_unavailable_products}}" name="options[unavailable_products]">
+            <input type="hidden" value="last" name="options[prefix]">
+            <span class="input-group d-flex">
+              <input type="text" name="q" placeholder="{{ 'sections.header.search_placeholder' | t}}" autocomplete="off">
+              <button type="submit" class="btn btn-1">
+                {%- render 'svg' type: 'search' -%}
+              </button>
+            </span>
+          </form>
+        </div>
+      {%- endif -%}
+
+    {%- else -%}
+      <div class="search-empty text-center">
+        <h3 class="search-empty_title">{{ 'pages.search.empty_title' | t}}</h3>
+        <div class="search-empty_subtitle">{{ 'pages.search.empty_subtitle' | t: terms: q}}</div>
+        <form action="/search" class="search-form d-flex justify-content-center" methos="get">
+          <input type="hidden" value="{{settings.search_type}}" name="type">
+          <input type="hidden" value="{{settings.search_unavailable_products}}" name="options[unavailable_products]">
+          <input type="hidden" value="last" name="options[prefix]">
+          <span class="input-group d-flex">
+            <input type="text" name="q" placeholder="{{ 'sections.header.search_placeholder' | t}}" autocomplete="off">
+            <button type="submit" class="btn btn-1">
+              {%- render 'svg' type: 'search' -%}
+            </button>
+          </span>
+        </form>
+      </div>
+
+    {%- endif -%}
+
+  </div>
+</div>
+
+{%- schema -%}
+  {
+    "name" : "t:sections.search-template.name",
+    "tag" : "section",
+    "settings" : [
+      {
+        "type": "range",
+        "id": "items_per_page",
+        "label": "t:sections.common.items_per_page",
+        "min": 1,
+        "max": 50,
+        "step": 1,
+        "default": 12
+      },
+      {
+        "type": "text",
+        "id": "items_resp",
+        "label": "t:sections.common.items_per_row",
+        "default": "4,3,2"
+      }
+    ]
+  }
+{%- endschema -%}

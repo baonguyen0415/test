@@ -1,0 +1,18 @@
+{%layout none%}
+{%- liquid
+  assign pagination_type = settings.blog_pagination_type
+-%}
+{%- paginate blog.articles by settings.articles_per_page -%}
+  <div id="main-blog-grid">
+    {%- for article in blog.articles -%}
+      {%- render 'article-item' article: article -%}
+    {%- else -%}
+      <div class="text-center">
+        <p>{{ 'pages.blog.not_matching' | t}}</p>
+      </div>
+    {%- endfor -%}
+  </div>
+  <div id="pagination-container">
+    {%- render 'pagination' paginate: paginate, type: pagination_type  -%}
+  </div>
+{%- endpaginate -%}

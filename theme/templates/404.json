@@ -1,0 +1,20 @@
+{
+  "sections": {
+    "main": {
+      "type": "404-template",
+      "settings": {
+        "image_width": "500px",
+        "icon_type": "image",
+        "icon_svg": "",
+        "title": "<p>Oops! - Could not Find it<\/p>",
+        "subheading": "<p>Sorry but the page you are looking for doesn't exist.<\/p>",
+        "btn_label": "BACK TO HOME",
+        "btn_style": "1",
+        "btn_link": "\/"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

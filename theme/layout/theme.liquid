@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}" class="no-js">
+  <head>
+    <link rel="preconnect dns-prefetch" href="https://cdn.shopify.com">
+    <link rel="preconnect dns-prefetch" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect dns-prefetch" href="https://fonts.gstatic.com" crossorigin>
+    {%- unless settings.header_font.system? and settings.body_font.system? -%}
+      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    {%- endunless -%}
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 128, height: 128 }}">
+    {%- endif -%}
+    <link rel="canonical" href="{{canonical_url}}">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="viewport-fit=cover, width=device-width,initial-scale=1, user-scalable=0"/>
+    <meta name="google" content="notranslate">
+    <meta name='HandheldFriendly' content='True'>
+    <meta name='MobileOptimized' content='360'>
+    <meta http-equiv="cleartype" content="on">
+    <meta name="theme-color" content="{{ settings.main_color }}">
+
+    <title>
+      {{ page_title }}
+      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+
+    {%- render 'meta-tags' -%}
+    <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
+
+    {%- render 'theme-font' -%}
+    {%- include 'style-resources' -%}
+    {%- include 'js-resources' -%}
+
+    {%- capture mainContent -%}{{ content_for_layout }}{%- endcapture -%}
+
+    {%- render 'preload-hero-banner', type: 'splitContent', content: mainContent, key: 'preload', firstSection: true, output: 'value' -%}
+
+    {%- if template contains 'product' and product.media.first != blank -%}
+      {%- render 'preload-hero-product-page' image: product.media.first, limit: 540 -%}
+    {%- endif -%}
+
+    {{content_for_header }}
+    
+    {% include 'arn_wl_cp_settings' %}
+    {% include 'arn_wl_cp_styles' %}
+    {% include 'arn_icons_define' %}
+    {% if shop.metafields.arena.wl_cp_settings.general_settings.app_script == false %}
+    <script defer crossorigin="anonymous" src="{{ 'arn-wishlist-compare.js'  | asset_url }}"></script>
+    {% endif %}
+  </head>
+
+  <body class="template-{{template.name}} template-{{template.name}}--{{template.suffix | default: 'default'}}{% if settings.page_layout == 'fix-boxed' %} fix-container{% endif %} cart-type-{{ settings.cart_type }}{% if settings.catalog_mode %} catalog-mode{% endif %}">
+    <div class="body-main-content">
+      {%- render 'header-group' -%}
+     
+      <main id="main-content">
+        {%- liquid
+          assign page_layout = settings.page_layout
+          if page_layout == 'wide'
+            assign layout_class = 'container-fluid'
+          else
+            assign layout_class = 'container'
+          endif
+        -%}
+
+        {%- unless template == 'index' or template == 'page.about-us' -%}{%- render 'breadcrumb' -%}{%- endunless -%}
+
+        {% if template == 'index' and settings.left_column_style == 'full-slideshow' %}
+          {% section 'section-slideshow' %}
+        {% endif %}
+
+        {%- if template == 'index' and settings.left_column_style != 'none' -%}
+        <div class="{{ layout_class }}">
+        <div class="row">
+        <div id="home-left-column" class="col-lg-3 d-none d-lg-block">
+          {% section 'homepage-left-column' %}
+        </div>
+        {%- endif -%}
+
+        {%- unless template == 'index' or template contains 'page' -%}<div class="{{ layout_class }}">{%- endunless -%}
+        {%- if template == 'index' and settings.left_column_style != 'none' -%}
+        <div id="home-main-content" class="col-lg-9 col-md-12">
+        {%- endif -%}
+        {%- capture mainContent -%}{%- render 'preload-hero-banner', type: 'splitContent', content: mainContent, key: 'preload', firstSection: false, output: '' -%}{%- endcapture -%}
+        {%- render 'preload-hero-banner', type: 'splitContent', content: mainContent, firstSection: false, output: '' -%}
+        {%- if template == 'index' and settings.left_column_style != 'none' -%}</div>{%- endif -%}
+        {%- unless template == 'index' or template contains 'page' -%}</div>{%- endunless -%}
+
+        {%- if template == 'index' and settings.left_column_style != 'none' -%}</div></div>{%- endif -%}
+      </main>
+
+      {%- if settings.bottom_products -%}{%- section 'section-bottom-products' -%}{%- endif -%}
+      {%- if settings.logo_list -%}{%- section 'section-logo-list' -%}{%- endif -%}
+
+      {%- render 'footer-group' -%}
+    </div>
+
+    <div>
+      {%- render 'popup' -%}
+      <button class="btn btn-1" id="back-to-top">{%- render 'svg', type: 'angle-up' -%}</button>
+      {%- render 'home-demos' -%}
+      {%- if settings.switcher_mode -%}{%- render 'mode-switcher' -%}{%- endif -%}
+    </div>
+
+  </body>
+</html>

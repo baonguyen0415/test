@@ -1,0 +1,91 @@
+{
+  "wrapper": "div.page-template.page-faqs",
+  "sections": {
+    "main": {
+      "type": "section-faqs",
+      "blocks": {
+        "7e6b94e1-7a00-4a7c-9e18-55575f4a2de6": {
+          "type": "block-item",
+          "settings": {
+            "question": "Is your cover the same as my original cover?",
+            "answer": "<p>No, we are an after-market supplier and therefore cannot copy OEM products, however in some cases our covers are compatible with your pre-existing hardware. However if you do have pre-existing hardware and are in any doubt that our cover will fit, please contact us before you order to verify if our cover is compatible.<\/p>"
+          }
+        },
+        "31d05e3f-c864-4e67-8b51-52453c6c8f1f": {
+          "type": "block-item",
+          "settings": {
+            "question": "What do I do if I receive a processing error for my payment?",
+            "answer": "<p>No, we are an after-market supplier and therefore cannot copy OEM products, however in some cases our covers are compatible with your pre-existing hardware. However if you do have pre-existing hardware and are in any doubt that our cover will fit, please contact us before you order to verify if our cover is compatible.<\/p>"
+          }
+        },
+        "3d6aca2e-15cb-492a-899b-f40922c963a4": {
+          "type": "block-item",
+          "settings": {
+            "question": "Why does my order say “Error. There was a problem processing your payment. Please try again”?",
+            "answer": "<p>No, we are an after-market supplier and therefore cannot copy OEM products, however in some cases our covers are compatible with your pre-existing hardware. However if you do have pre-existing hardware and are in any doubt that our cover will fit, please contact us before you order to verify if our cover is compatible.<\/p>"
+          }
+        },
+        "2838ad69-c57c-4ea7-9b29-e207ca9826c5": {
+          "type": "block-item",
+          "settings": {
+            "question": "Why might I pay more or less at my local store than the online total check out amount?",
+            "answer": "<p>No, we are an after-market supplier and therefore cannot copy OEM products, however in some cases our covers are compatible with your pre-existing hardware. However if you do have pre-existing hardware and are in any doubt that our cover will fit, please contact us before you order to verify if our cover is compatible.<\/p>"
+          }
+        },
+        "a52b9e9c-5111-461d-bf0d-d525963139c3": {
+          "type": "block-item",
+          "settings": {
+            "question": "Can I qualify for free shipping?",
+            "answer": "<p>No, we are an after-market supplier and therefore cannot copy OEM products, however in some cases our covers are compatible with your pre-existing hardware. However if you do have pre-existing hardware and are in any doubt that our cover will fit, please contact us before you order to verify if our cover is compatible.<\/p>"
+          }
+        },
+        "49069cc0-8252-4a22-b849-2949dd6b87ad": {
+          "type": "block-item",
+          "settings": {
+            "question": "Can I have my order shipped to a different address than my home address?",
+            "answer": "<p>No, we are an after-market supplier and therefore cannot copy OEM products, however in some cases our covers are compatible with your pre-existing hardware. However if you do have pre-existing hardware and are in any doubt that our cover will fit, please contact us before you order to verify if our cover is compatible.<\/p>"
+          }
+        },
+        "3877e05e-13ca-4932-85de-6b0f8c4a6608": {
+          "type": "block-item",
+          "settings": {
+            "question": "Can I see where my package is while it’s on the way?",
+            "answer": "<p>No, we are an after-market supplier and therefore cannot copy OEM products, however in some cases our covers are compatible with your pre-existing hardware. However if you do have pre-existing hardware and are in any doubt that our cover will fit, please contact us before you order to verify if our cover is compatible.<\/p>"
+          }
+        },
+        "9dd7b777-5622-4300-93de-df1e3c1a9806": {
+          "type": "block-item",
+          "settings": {
+            "question": "Is it possible for me to cancel my online order?",
+            "answer": "<p>No, we are an after-market supplier and therefore cannot copy OEM products, however in some cases our covers are compatible with your pre-existing hardware. However if you do have pre-existing hardware and are in any doubt that our cover will fit, please contact us before you order to verify if our cover is compatible.<\/p>"
+          }
+        },
+        "6df8acfe-9fd8-460b-b29a-b5a863603543": {
+          "type": "block-item",
+          "settings": {
+            "question": "What browsers does your site support?",
+            "answer": "<p>No, we are an after-market supplier and therefore cannot copy OEM products, however in some cases our covers are compatible with your pre-existing hardware. However if you do have pre-existing hardware and are in any doubt that our cover will fit, please contact us before you order to verify if our cover is compatible.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "7e6b94e1-7a00-4a7c-9e18-55575f4a2de6",
+        "31d05e3f-c864-4e67-8b51-52453c6c8f1f",
+        "3d6aca2e-15cb-492a-899b-f40922c963a4",
+        "2838ad69-c57c-4ea7-9b29-e207ca9826c5",
+        "a52b9e9c-5111-461d-bf0d-d525963139c3",
+        "49069cc0-8252-4a22-b849-2949dd6b87ad",
+        "3877e05e-13ca-4932-85de-6b0f8c4a6608",
+        "9dd7b777-5622-4300-93de-df1e3c1a9806",
+        "6df8acfe-9fd8-460b-b29a-b5a863603543"
+      ],
+      "settings": {
+        "heading": "FREQUENTLY ASKED QUESTIONS",
+        "subheading": "Welcome to your new go-to source for aftermarket auto parts and accessories. Our shop is committed to bringing you the same competitive prices, better customer service, and a truly superior shopping experience."
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

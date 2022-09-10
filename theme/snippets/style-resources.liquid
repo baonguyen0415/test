@@ -1,0 +1,136 @@
+<link rel="preload" href="{{'themes.css' | asset_url}}" as="style">
+
+<link rel="stylesheet" href="{{'themes.css' | asset_url}}" media="all">
+
+{% if settings.direction == 'RTL' %}
+  <link rel="stylesheet" href="{{ 'themes-rtl.css' | asset_url }}" media="all">
+{% endif %}
+
+{%- if template contains 'product' -%}
+  <link rel="stylesheet" href="{{'product.css' | asset_url}}" media="print" onload="this.media='all'">
+{%- endif -%}
+
+{%- if template contains 'collection' -%}
+  <link rel="stylesheet" href="{{'collection.css' | asset_url}}" media="print" onload="this.media='all'">
+{%- endif -%}
+
+{%- if template contains 'blog' or template contains 'article' -%}
+  <link rel="stylesheet" href="{{'blog.css' | asset_url}}" media="print" onload="this.media='all'">
+{%- endif -%}
+
+{%- if template contains 'page' or template contains '404' or template contains 'customer' -%}
+  <link rel="stylesheet" href="{{'pages.css' | asset_url}}" media="print" onload="this.media='all'">
+{%- endif -%}
+
+<link rel="stylesheet" href="{{'cart.css' | asset_url}}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{'popup-style.css' | asset_url}}" media="print" onload="this.media='all'">
+{% render 'css_variables' %}
+
+{%- capture css -%}
+  {%- if request.design_mode -%}
+    .element-active{animation: element-active 1s 2;}
+    @keyframes element-active {
+      0% {background-color: {{ 'white' | color_modify: 'alpha', 1}};}
+      50%{background-color: {{settings.main_color | color_modify: 'alpha', 1}};}
+      100% {background-color: {{ 'white' | color_modify: 'alpha', 1}};}
+    }
+  {%- endif -%}
+  .slider-container:not(.slider-initialized) .slider-item {
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+  }
+  .visibility-hidden {
+    visibility: hidden;
+  }
+  .position-relative {
+    position: relative !important;
+  }
+  .position-unset {
+    position: unset !important;
+  }
+  .cursor-pointer{
+    cursor: pointer
+  }
+  .m-auto{
+    margin: auto;
+  }
+  .m-0{
+    margin: 0;
+  }
+  .collapse{
+    height: 0px;
+    transition: height 0.2s;
+    overflow: hidden;
+  }
+  .overflow-hidden{
+    overflow: hidden;
+  }
+  html.no-js .no-js-hidden{display: none !important;}
+  .object-fit-cover img{
+    object-fit: cover;
+  }
+
+  html.no-js .image__style{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  html.js .image__style{
+    background-image: unset !important;
+  }
+
+  {%- liquid
+    assign default_color = 'rgba(0,0,0,0)'
+    assign social_icon_color = settings.social_icon_color  | default: default_color
+    assign social_icon_rounded = settings.social_icon_rounded
+    assign social_icon_background = settings.social_icon_background
+    assign social_icon_border_color = settings.social_icon_border_color | default: default_color
+  -%}
+
+  .widget-social-icons a{
+    {%- if social_icon_color != default_color -%} color: {{social_icon_color}}; {%- endif -%}
+    {%- if social_icon_background != default_color -%} background-color: {{social_icon_background}}; {%- endif -%}
+    border-radius: {{social_icon_rounded}}px;
+    border-color: {{social_icon_border_color}};
+  }
+
+
+
+  {%- if template.name == 'product' -%}
+    .product-status .in-stock,.product-status .out-stock{display: none;}
+    .product-status[data-status='1'] .in-stock{display: block;}
+    .product-status[data-status='0'] .out-stock{display: block;}
+  {%- endif -%}
+  {%- render 'snippet-heading-css' type: 'general'  -%}
+
+  {%- if settings.custom_color != blank -%}
+    {%- liquid
+      assign custom_color = settings.custom_color | split: ','
+    -%}
+    {%- for color in custom_color -%}
+      {%- if color != blank -%}
+        .custom-color[data-custom-color="{{color | split: ":" | first | strip | downcase}}"],.custom-color[data-custom-color="{{color | split: ":" | first | strip | downcase}}"] a{
+          color: {{color | split: ':' | last | strip}};
+        }
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+
+  {% comment %} Product Card Style {% endcomment %}
+  {%- liquid
+    assign product_card_title_fs  = settings.product_card_title_fs
+    assign product_card_price_fs  = settings.product_card_price_fs
+    assign product_card_vendor_fs = settings.product_card_vendor_fs
+    assign product_card_price_sale_fs    = settings.product_card_price_sale_fs
+    assign product_card_price_compare_fs = settings.product_card_price_compare_fs
+  -%}
+  {%- render 'css-responsive' preClassID: '.product-card', classID: ' .product-card_name a', value_1: product_card_title_fs, property_1: 'font-size' -%}
+  {%- render 'css-responsive' preClassID: '.product-card', classID: ' .product-card_vendor a', value_1: product_card_vendor_fs, property_1: 'font-size' -%}
+{%- endcapture -%}
+
+{%- style  -%}
+  {{css | strip | strip_newlines | remove: '  '}}
+{%- endstyle -%}
+
+{% comment %} compress {% endcomment %}

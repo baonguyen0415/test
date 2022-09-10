@@ -1,0 +1,153 @@
+{
+  "wrapper": "div.page-template.page-about-us",
+  "sections": {
+    "1647246020b4050e8c": {
+      "type": "section-single-banner",
+      "blocks": {
+        "2f8f73e5-7d73-468e-b688-a0933e268e5a": {
+          "type": "block-style",
+          "settings": {
+            "title_color": "#0fed12",
+            "title_font_size": "",
+            "title_font_weight": 600,
+            "title_line_height": "",
+            "subtext_color": "",
+            "subtext_font_size": "",
+            "subtext_font_weight": 400,
+            "subtext_line_height": ""
+          }
+        }
+      },
+      "block_order": [
+        "2f8f73e5-7d73-468e-b688-a0933e268e5a"
+      ],
+      "settings": {
+        "section_height": "260px",
+        "layout": "boxed",
+        "margin": "",
+        "padding": "",
+        "link": "",
+        "bg_size_desk": "auto",
+        "bg_position_desk": "center center",
+        "bg_repeat_desk": "no-repeat",
+        "bg_size_mobi": "auto",
+        "bg_position_mobi": "center center",
+        "bg_repeat_mobi": "no-repeat",
+        "heading": "About us",
+        "subtext": "Passion may be a friendly or eager interest in or admiration for a proposal, cause, discovery, or activity or love to a feeling of unusual excitement."
+      }
+    },
+    "1647252900f0c27d59": {
+      "type": "section-image-gallery",
+      "blocks": {
+        "164725290075cec085-0": {
+          "type": "block-item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/brand-5-1.png",
+            "heading": "What we really do?",
+            "subtext": "Donec libero dolor, tincidunt id laoreet vitae,ullamcorper eu tortor. Maecenas pellentesque, dui vitae iaculis mattis, tortor nisi faucibus magna, vitae ultrices lacus purus vitae metus.",
+            "link": ""
+          }
+        },
+        "164725290075cec085-1": {
+          "type": "block-item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/brand-4-1.png",
+            "heading": "",
+            "subtext": "",
+            "link": ""
+          }
+        },
+        "164725290075cec085-2": {
+          "type": "block-item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/brand-3-1.png",
+            "heading": "",
+            "subtext": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "164725290075cec085-0",
+        "164725290075cec085-1",
+        "164725290075cec085-2"
+      ],
+      "settings": {
+        "layout": "boxed",
+        "border_top": false,
+        "margin": "",
+        "padding": "",
+        "items_resp": "4,2",
+        "items_spacing": true,
+        "bg_color": "",
+        "enable_slider": false,
+        "loop": false,
+        "controls": true,
+        "dots": true,
+        "autoplay": false,
+        "autoplay_timeout": 4
+      }
+    },
+    "164725291192e9ab7f": {
+      "type": "section-image-gallery",
+      "blocks": {
+        "1647252911268353fa-0": {
+          "type": "block-item",
+          "settings": {
+            "heading": "",
+            "subtext": "",
+            "link": ""
+          }
+        },
+        "1647252911268353fa-1": {
+          "type": "block-item",
+          "settings": {
+            "heading": "",
+            "subtext": "",
+            "link": ""
+          }
+        },
+        "1647252911268353fa-2": {
+          "type": "block-item",
+          "settings": {
+            "heading": "",
+            "subtext": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1647252911268353fa-0",
+        "1647252911268353fa-1",
+        "1647252911268353fa-2"
+      ],
+      "settings": {
+        "layout": "boxed",
+        "border_top": false,
+        "margin": "",
+        "padding": "",
+        "items_resp": "4,2",
+        "items_spacing": true,
+        "bg_color": "",
+        "enable_slider": false,
+        "loop": false,
+        "controls": true,
+        "dots": true,
+        "autoplay": false,
+        "autoplay_timeout": 4
+      }
+    },
+    "main": {
+      "type": "page-about-template",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "1647246020b4050e8c",
+    "1647252900f0c27d59",
+    "164725291192e9ab7f",
+    "main"
+  ]
+}

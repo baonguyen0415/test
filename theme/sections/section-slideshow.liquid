@@ -1,0 +1,973 @@
+<link rel="stylesheet" href="{{'section-slideshow.css' | asset_url}}" media="all">
+
+{%- liquid
+  assign bg_class = ''
+  assign slideshow_height = section.settings.slideshow_height
+  assign disable_lazyload = section.settings.disable_lazyload
+  assign push_layout_right = section.settings.push_layout_right
+  assign limit = section.blocks.size
+  assign dots  = section.settings.dots
+  assign loop  = section.settings.loop
+  assign controls = section.settings.controls
+  assign autoplay = section.settings.autoplay
+  assign sectionID  = '#section-' | append: section.id
+  assign items_resp = '1'
+  assign controls_id = '#controls-' | append: section.id
+  assign items_spacing = '0'
+  assign autoplay_timeout = section.settings.autoplay_timeout
+  assign heading_style_block = section.blocks | where: 'type' , 'heading-style' | first
+  assign slider_id = '#slider-' | append: section.id
+  assign slider_id_2 = '#slider-2-' | append: section.id
+  assign gallery_blocks = section.blocks | where: 'type', 'block-item'
+
+  assign layout = section.settings.layout
+  if layout == 'boxed'
+    assign layout_class = 'container'
+  else
+    assign layout_class = 'layout-wide'
+  endif
+
+  assign right_sidebar = section.settings.right_sidebar
+-%}
+
+<div class="section-slideshow{% if right_sidebar != 'none' %} sidebar-{{ right_sidebar }}{% endif %}" id="section-{{section.id}}" data-section-id="{{section.id}}" data-section-type="featured-blog">
+  <div class="{{ layout_class }} {{ slideshow_height }}">
+    <div class="section-wrapper push-layout-{{ push_layout_right }}">
+
+      <div class="section-body{% if right_sidebar == 'banner' %} style-{{ section.settings.three_banner_style}}{% endif %}">
+        <div class="bc-slideshow-wrapper">
+          <div class="bc-slideshow">
+
+            <slider-component id="slideshow-media-main">
+              <div class="slider-container js-slider-container">
+                <div class="slider-wrapper">
+                  <div class="slider-list" id="slider-{{section.id}}">
+                    {%- for block in section.blocks -%}
+
+                      {%- case block.type -%}
+                        {%- when 'block-item' -%}
+
+                        {%- liquid
+                          assign link = block.settings.link
+                          assign image = block.settings.image
+                          assign title = block.settings.heading
+                          assign subtext = block.settings.subtext
+                          assign subtext_2 = block.settings.subtext_2
+                          assign button_label = block.settings.button_label
+                          assign image_layout = block.settings.image_layout
+
+                          if block.settings.image_mobile == blank
+                          assign image_mobile = block.settings.image
+                          else
+                          assign image_mobile = block.settings.image_mobile
+                          endif
+                        -%}
+
+                        {%- capture blockID -%}.slide-{{block.id}}{%- endcapture -%}
+
+                        <div class="slider-item slide-{{block.id}}">
+                          <a href="{{ link }}" class="slide-bg">
+                              {%- if forloop.first -%}
+                                {%- if image != blank -%}
+                                {%- render 'image-style' image: image class: 'image-desktop', preload: true, preloadType: 'desktop', dislazy: disable_lazyload -%}
+                                {%- endif -%}
+                                {%- if image_mobile != blank -%}
+                                {%- render 'image-style' image: image_mobile class: 'image-mobile', preload: true, preloadType: 'mobile', dislazy: disable_lazyload -%}
+                                {%- endif -%}
+                              {%- else -%}
+                                {%- if image != blank -%}
+                                {%- render 'image-style' image: image class: 'image-desktop' -%}
+                                {%- endif -%}
+                                {%- if image_mobile != blank -%}
+                                {%- render 'image-style' image: image_mobile class: 'image-mobile' -%}
+                                {%- endif -%}
+                              {%- endif -%}
+                          </a>
+                          <div class="slide-content">
+                            <div class="slide-content-wrapper">
+                              <div class="slide-content-inner">
+                                {%- if title != blank -%}<span class="image-gallery_title content-text-1">{{title}}</span>{%- endif -%}
+                                {%- if subtext != blank -%}<span class="image-gallery_subtext content-text-2">{{subtext}}</span>{%- endif -%}
+                                {%- if subtext_2 != blank -%}<span class="image-gallery_subtext_2 content-text-3">{{subtext_2}}</span>{%- endif -%}
+                                {%- if button_label != blank -%}<a href="{{ link }}" class="btn btn-1 btn-slideshow content-button">{{button_label}}</a>{%- endif -%}
+                              </div>
+                            </div>
+
+                            {%- if image_layout != blank -%}
+                              <div class="image-layer-box">
+                                <div class="image-layer-slide">
+                                  <a href="{{ link }}">
+                                    {%- if forloop.first -%}
+                                      {%- render 'image-style' image: image_layout, limit: 992, preload: true, dislazy: disable_lazyload -%}
+                                    {%- else -%}
+                                      {%- render 'image-style' image: image_layout, limit: 992 -%}
+                                    {%- endif -%}
+                                  </a>
+                                </div>
+                              </div>
+                            {%- endif -%}
+                          </div>
+
+                          {%- for block in section.blocks offset: forloop.index -%}
+                            {%- if block.type == 'block-item' -%}{%- break -%}{%- endif -%}
+                              {%- assign  blockType = block.type | remove: 'style_' -%}
+                              {%- capture block_css -%}
+                                {%- render 'snippet-slideshow-style', type: blockType, sectionID: sectionID, block: block, blockID: blockID -%}
+                              {%- endcapture -%}
+                              {%- unless block_css == blank -%}
+                                <style{{block.shopify_attributes}}>{{block_css}}</style>
+                              {%- endunless -%}
+                          {%- endfor -%}
+                        </div>
+
+                        {%- else -%}
+                      {%- endcase -%}
+
+                    {%- endfor -%}
+                  </div>
+
+                  {%- render 'set-tns-config'
+                    loop: loop,
+                    dots: dots,
+                    padding: items_spacing,
+                    classID: sectionID,
+                    controls: controls,
+                    autoplay: autoplay,
+                    slider_id  : slider_id,
+                    total_item : limit,
+                    items_resp : items_resp,
+                    controls_id: controls_id,
+                    customControls  : true,
+                    autoplay_timeout: autoplay_timeout,
+                  -%}
+
+                </div>
+              </div>
+            </slider-component>
+          </div>
+
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'category' -%}
+              <div class="block-categories">
+                {% for i in (1..5) %}
+                  {%- assign _heading = 'heading_' | append: i -%}
+                  {%- assign _collection = 'collection_' | append: i -%}
+                  {%- assign collection = collections[block.settings[_collection]] -%} 
+
+                  {% unless block.settings[_collection] == blank %}
+                    <div class="collection-card">
+                      <div class="collection-card_image">
+                        <a href="{{collection.url}}">
+                          {%- render 'image-style' image: collection.image -%}
+                        </a>
+                      </div>
+                      <div class="collection-card_title text-center">
+                        <a href="{{collection.url}}">{%- if block.settings[_heading] == 'blank' -%}{{collection.title}}{%- else -%}{{ block.settings[_heading] }}{%- endif -%}</a>
+                      </div>
+                    </div>
+                  {% endunless %}
+
+                {% endfor %} 
+              </div>
+            {%- break -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+
+        {%- if right_sidebar != 'none' -%}
+          {%- if right_sidebar == 'product' -%}
+            <div class="bc-three-products">
+              <slider-component id="slideshow-three-products">
+                <div class="slider-container js-slider-container">
+                  <div class="slider-wrapper">
+                    <div class="slider-list" id="slider-2-{{ section.id }}">
+                      {%- assign _number = 0 -%}
+                      {%- for i in (1..3) -%} 
+                        {%- assign _product = 'product_' | append: i-%}
+                        {%- assign __product = section.settings[_product] -%}
+
+                        {%- unless __product == blank -%}
+                          {%- assign _number = _number | plus: 1 -%}
+                          {%- assign product = all_products[__product] -%}
+                          <div class="slider-item">
+                            {%- include 'product-item' product: product -%}
+                          </div>
+                        {%- endunless -%}
+                      {%- endfor -%}
+                    </div>
+
+                    {%- capture controls_id -%}#controls-three-products{%- endcapture -%}
+
+                    {%- render 'set-tns-config'
+                      loop: true,
+                      dots: false,
+                      controls: true,
+                      autoplay: false,
+                      slider_id  : slider_id_2,
+                      total_item : _number,
+                      items_resp: 1,
+                      controls_id: controls_id
+                    -%}
+
+                  </div>
+                </div>
+              </slider-component>
+            </div>
+    
+          {%- else -%}
+            {%- assign _bg_color = section.settings.three_image_bg_color -%}
+            {%- if right_sidebar == 'banner' -%}
+              {%- assign _i = 3 -%}
+            {%- else -%}
+              {%- assign _i = 2 -%}
+            {%- endif -%}
+            <div class="bc-three-banner style-{{ section.settings.three_banner_style}}">
+
+              {%- for i in (1.._i) -%}
+                {%- assign _three_image = 'three_image_' | append: i -%}
+
+                {% unless section.settings[_three_image] == blank %}
+                  {%- assign _three_text = 'three_text_' | append: i -%}
+                  {%- assign _three_button = 'three_button_' | append: i -%}
+                  {%- assign _three_link = 'three_link_' | append: i -%}
+
+                  <div class="bc-item">
+                    <div class="bc-item-inner" style="background: {{ _bg_color  }};">
+                      <div class="bc-item-left">
+                        <a href="{{ section.settings[_three_link] }}">
+                          {%- render 'image-style' image: section.settings[_three_image], limit: 150 -%}
+                        </a>
+                      </div>
+
+                      <div class="bc-item-body">
+                        {% unless section.settings[_three_text] == blank %}
+                          <div class="bc-item-text"><a href="{{ section.settings[_three_link] }}">{{ section.settings[_three_text] }}</a></div>
+                        {% endunless %}
+                        {% unless section.settings[_three_button] == blank %}
+                          <a class="bc-item-btn" href="{{ section.settings[_three_link] }}">
+                            <span>{{ section.settings[_three_button] }}</span>
+                            <span class="btn-icon">{%- render 'svg' type: 'angle-right' -%}</span>
+                          </a>
+                        {% endunless %}
+                      </div>
+                    </div>
+                  </div>
+                  
+                {% endunless %}
+              {%- endfor -%}
+
+            </div>
+            
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style type="text/css">
+  {% if slideshow_height == 'fix-height' %}
+  @media (min-width: 768px) {
+    .section-slideshow#section-{{section.id}} .bc-slideshow{
+      height: {{ section.settings.manually_height }}px;
+    }
+  }
+  {% endif %}
+  .section-slideshow#section-{{section.id}} .bc-slideshow .slider-wrapper .tns-nav{
+    bottom: {{ section.settings.dots_position }}%;
+  }
+</style>
+
+{%- unless section_css == blank -%}
+  {%- style -%}{{section_css}}{%- endstyle -%}
+{%- endunless -%}
+
+<script>
+  window.theme = window.theme || {};
+  if(!!window.theme.sectionRegister){
+    !window.theme.sectionRegister.includes("featured-blog") && (window.theme.sectionRegister = [...window.theme.sectionRegister, "featured-blog"]);
+  }else{
+    window.theme.sectionRegister = ["featured-blog"];
+  }
+</script>
+
+<script>
+  window.theme = window.theme || {};
+  if(!!window.theme.customElementsList){
+    !window.theme.customElementsList.includes("slider-component") && (window.theme.customElementsList = [...window.theme.customElementsList, "slider-component"]);
+  }else{
+    window.theme.customElementsList = ["slider-component"];
+  }
+</script>
+
+{%- capture section_css -%}
+{%- render 'snippet-theme' type: 'section-style', preClassID: sectionID, classID: bg_class, config: section.settings -%}
+{%- endcapture -%}
+{%- style -%}{{section_css | strip | strip_newlines | remove: '  ' }}{%- endstyle -%}
+{%- schema -%}
+{
+  "name": "t:sections.slideshow.name",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.slideshow.settings.created_by"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.common.general"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "t:sections.common.layout_mode",
+      "default": "boxed",
+      "options": [
+        {
+          "value": "boxed",
+          "label": "Boxed"
+        },
+        {
+          "value": "full",
+          "label": "Wide"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "right_sidebar",
+      "label": "t:sections.common.right_sidebar",
+      "default": "none",
+      "options": [
+        { "value": "banner", "label": "t:sections.common.image" },
+        { "value": "overlay", "label": "t:sections.slideshow.settings.image_overlay_slideshow" },
+        { "value": "product", "label": "t:sections.common.product" },
+        { "value": "none", "label": "t:sections.common.none" }
+      ] 
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "t:sections.common.background_color"
+    },
+    {
+      "type": "text",
+      "id": "margin",
+      "label": "t:sections.common.section_margin",
+      "info": "t:sections.common.order_info",
+      "placeholder": "t:sections.common.order_placeholder"
+    },
+    {
+      "type": "text",
+      "id": "padding",
+      "label": "t:sections.common.section_padding",
+      "info": "t:sections.common.order_info",
+      "placeholder": "t:sections.common.order_placeholder"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.common.layout_settings"
+    },
+    {
+      "type": "select",
+      "id": "slideshow_height",
+      "label": "t:sections.slideshow.settings.slideshow_height",
+      "default": "auto-height",
+      "options": [
+        { "value": "auto-height", "label": "t:sections.common.auto" },
+        { "value": "full-height", "label": "t:sections.slideshow.settings.full_screen" },
+        { "value": "fix-height", "label": "t:sections.slideshow.settings.manually" }
+      ]
+    },
+    {
+      "type":"range",
+      "id":"manually_height",
+      "label":"t:sections.slideshow.settings.manually_height",
+      "min": 300,
+      "max": 700,
+      "step": 5,
+      "unit":"px",
+      "default": 425
+    }, 
+    {
+      "type":"checkbox",
+      "id":"disable_lazyload",
+      "label":"t:sections.slideshow.settings.disable_lazyload",
+      "default": false
+    },
+    {
+      "type":"checkbox",
+      "id":"push_layout_right",
+      "label":"t:sections.slideshow.settings.push_layout_to_right" 
+    }, 
+    {
+      "type": "header",
+      "content": "t:sections.common.slider_settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "loop",
+      "label": "t:sections.common.loop",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "controls",
+      "label": "t:sections.common.controls",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "dots",
+      "label": "t:sections.common.dots",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "dots_position",
+      "label": "t:sections.slideshow.settings.dots_position",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "t:sections.common.autoplay",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "autoplay_timeout",
+      "label": "t:sections.common.autoplay_timeout",
+      "step": 0.1,
+      "min": 2,
+      "max": 10,
+      "unit": "s",
+      "default": 4
+    }, 
+    {
+      "type": "header",
+      "content": "t:sections.slideshow.settings.three_image_style"
+    },
+    {
+      "type": "select",
+      "id": "three_banner_style",
+      "label": "t:sections.common.style",
+      "default": "1",
+      "options": [
+        { "value": "1", "label": "t:sections.common.style_1" },
+        { "value": "2", "label": "t:sections.common.style_2" }
+      ]
+    }, 
+    {
+      "type": "color",
+      "id": "three_image_bg_color",
+      "label": "t:sections.common.background_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.common.block_image"
+    },
+    {
+      "type": "image_picker",
+      "id": "three_image_1",
+      "label": "t:sections.common.image"
+    },
+    {
+      "type": "textarea",
+      "id": "three_text_1",
+      "label": "t:sections.common.textbox"
+    },
+    {
+      "type": "text",
+      "id": "three_button_1",
+      "label": "t:sections.common.button_label",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "three_link_1",
+      "label": "t:sections.common.button_link"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.common.block_image"
+    },
+    {
+      "type": "image_picker",
+      "id": "three_image_2",
+      "label": "t:sections.common.image"
+    },
+    {
+      "type": "textarea",
+      "id": "three_text_2",
+      "label": "t:sections.common.textbox"
+    },
+    {
+      "type": "text",
+      "id": "three_button_2",
+      "label": "t:sections.common.button_label",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "three_link_2",
+      "label": "t:sections.common.button_link"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.common.block_image"
+    },
+    {
+      "type": "image_picker",
+      "id": "three_image_3",
+      "label": "t:sections.common.image"
+    },
+    {
+      "type": "textarea",
+      "id": "three_text_3",
+      "label": "t:sections.common.textbox"
+    },
+    {
+      "type": "text",
+      "id": "three_button_3",
+      "label": "t:sections.common.button_label",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "three_link_3",
+      "label": "t:sections.common.button_link"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.common.block_product"
+    },
+    {
+      "type": "product",
+      "id": "product_1",
+      "label": "t:sections.common.product"
+    },
+    {
+      "type": "product",
+      "id": "product_2",
+      "label": "t:sections.common.product"
+    },
+    {
+      "type": "product",
+      "id": "product_3",
+      "label": "t:sections.common.product"
+    }
+  ],
+  "blocks": [
+    {
+      "type" : "block-item",
+      "name" : "t:sections.common.block_item",
+      "settings" : [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.common.image_desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "t:sections.common.image_mobile"
+        },
+        {
+          "type": "header",
+          "content": "Image layout"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_layout",
+          "label": "t:sections.common.image"
+        },
+        {
+          "type": "header",
+          "content": "Textbox layout"
+        },
+        {
+          "type": "textarea",
+          "id": "heading",
+          "label": "t:sections.common.heading"
+        },
+        {
+          "type": "textarea",
+          "id": "subtext",
+          "label": "t:sections.common.subtext"
+        },
+        {
+          "type": "textarea",
+          "id": "subtext_2",
+          "label": "t:sections.common.subtext_2"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "t:sections.common.button_label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.common.link"
+        }
+      ]
+    },
+    {
+     "type": "style_content_wrapper",
+     "name": "[+] Content wrapper",
+     "settings": [
+        {
+           "type": "text",
+           "id": "title",
+           "label": "Block label"
+        },
+        {
+           "type":"paragraph",
+           "content":"[What mean of comma?](https:\/\/support.arenacommerce.com\/a\/solutions\/articles\/6000243911)"
+        },
+        {
+           "type": "text",
+           "id": "position",
+           "label": "Text block position",
+           "info": "Left(%):Top(%). E.g: 50%:50%."
+        },
+        {
+          "type": "select",
+          "id": "align",
+          "label": "Text alignment",
+          "default": "left",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        }
+      ]
+    },
+    {
+     "type": "style_paragraph",
+     "name": "[+] Paragraph",
+     "settings": [
+        {
+           "type": "text",
+           "id": "title",
+           "label": "Block label"
+        },
+        {
+           "type":"paragraph",
+           "content":"[What mean of comma?](https:\/\/support.arenacommerce.com\/a\/solutions\/articles\/6000243911)"
+        },
+        {
+           "type": "header",
+           "content": "Heading"
+        },
+        {
+           "type": "text",
+           "id": "text_fs_1",
+           "label": "Font size",
+           "info": "E.g: 24px"
+        },
+        {
+           "type": "color",
+           "id": "text_cl_1",
+           "label": "Color"
+        },
+        {
+           "type": "range",
+           "id": "text_fw_1",
+           "label": "Font weight (0 is auto)",
+           "min": 0,
+           "max": 900,
+           "step": 100,
+           "default": 0
+        },
+        {
+           "type": "text",
+           "id": "text_1_margin",
+           "label": "Margin",
+           "info": "Order: Top Right Bottom Left. E.g: 5px 8px 5px 8px"
+        },
+        {
+           "type": "text",
+           "id": "text_lh_1",
+           "label": "Line height",
+           "info": "E.g: 21px"
+        },
+        {
+           "type": "header",
+           "content": "Subtext"
+        },
+        {
+           "type": "text",
+           "id": "text_fs_2",
+           "label": "Font size",
+           "info": "E.g: 24px"
+        },
+        {
+           "type": "color",
+           "id": "text_cl_2",
+           "label": "Color"
+        },
+        {
+           "type": "range",
+           "id": "text_fw_2",
+           "label": "Font weight (0 is auto)",
+           "min": 0,
+           "max": 900,
+           "step": 100,
+           "default": 0
+        },
+        {
+           "type": "text",
+           "id": "text_2_margin",
+           "label": "Margin",
+           "info": "Order: Top Right Bottom Left. E.g: 5px 8px 5px 8px"
+        },
+        {
+           "type": "text",
+           "id": "text_lh_2",
+           "label": "Line height",
+           "info": "E.g: 21px"
+        },
+        {
+           "type": "header",
+           "content": "Subtext 2"
+        },
+        {
+           "type": "text",
+           "id": "text_fs_3",
+           "label": "Font size",
+           "info": "E.g: 24px"
+        },
+        {
+           "type": "color",
+           "id": "text_cl_3",
+           "label": "Color"
+        },
+        {
+           "type": "range",
+           "id": "text_fw_3",
+           "label": "Font weight (0 is auto)",
+           "min": 0,
+           "max": 900,
+           "step": 100,
+           "default": 0
+        },
+        {
+           "type": "text",
+           "id": "text_3_margin",
+           "label": "Margin",
+           "info": "Order: Top Right Bottom Left. E.g: 5px 8px 5px 8px"
+        },
+        {
+           "type": "text",
+           "id": "text_lh_3",
+           "label": "Line height",
+           "info": "E.g: 21px"
+        }
+     ]
+    },
+    {
+       "type": "style_button",
+       "name": "[+] Button",
+       "settings": [
+          {
+             "type": "text",
+             "id": "title",
+             "label": "Block label"
+          },
+          {
+             "type":"paragraph",
+             "content":"[What mean of comma?](https:\/\/support.arenacommerce.com\/a\/solutions\/articles\/6000243911)"
+          },
+          {
+             "type": "text",
+             "id": "btn_fs",
+             "label": "Font size",
+             "info": "E.g: 24px"
+          },
+          {
+             "type": "color",
+             "id": "btn_cl",
+             "label": "Text Color"
+          },
+          {
+             "type": "color",
+             "id": "btn_bg_cl",
+             "label": "Background Color"
+          },
+          {
+             "type": "color",
+             "id": "btn_border_cl",
+             "label": "Border Color"
+          },
+          {
+             "type": "color",
+             "id": "btn_hover_cl",
+             "label": "Hover: Text color"
+          },
+          {
+             "type": "color",
+             "id": "btn_hover_bg_cl",
+             "label": "Hover: Background color"
+          },
+          {
+             "type": "color",
+             "id": "btn_hover_border_cl",
+             "label": "Hover: Border color"
+          },
+          {
+             "type": "range",
+             "id": "btn_fw",
+             "label": "Font weight (0 is auto)",
+             "min": 0,
+             "max": 900,
+             "step": 100,
+             "default": 0
+          },
+          {
+             "type": "text",
+             "id": "btn_padding",
+             "label": "Padding",
+             "info": "Order: Top Right Bottom Left. E.g: 5px 8px 5px 8px"
+          },
+          {
+             "type": "text",
+             "id": "btn_radius",
+             "label": "Button rounded corners",
+             "info": "E.g: 8px 8px 8px 8px"
+          }
+       ]
+    },
+    {
+     "type": "style_image_layout",
+     "name": "[+] Image Layout",
+     "settings": [
+        {
+           "type": "text",
+           "id": "title",
+           "label": "Block label"
+        },
+        {
+           "type":"paragraph",
+           "content":"[What mean of comma?](https:\/\/support.arenacommerce.com\/a\/solutions\/articles\/6000243911)"
+        },
+        {
+           "type": "text",
+           "id": "position",
+           "label": "Position",
+           "info": "Left(%):Top(%). E.g: 50%:50%"
+        },
+        {
+           "type": "text",
+           "id": "image_max_w",
+           "label": "Width",
+           "default": "520px",
+           "info": "E.g: 520px"
+        }
+      ]
+    },
+    {
+     "type": "category",
+     "name": "t:sections.common.categories",
+     "settings": [
+        {
+           "type": "text",
+           "id": "title",
+           "label": "Block label"
+        },
+        {
+           "type": "header",
+           "content": "t:sections.common.block_item"
+        },
+        {
+           "type": "text",
+           "id": "heading_1",
+           "label": "t:sections.common.heading"
+        },
+        {
+           "type": "collection",
+           "id": "collection_1",
+           "label": "t:sections.common.collection"
+        },
+        {
+           "type": "header",
+           "content": "t:sections.common.block_item"
+        },
+        {
+           "type": "text",
+           "id": "heading_2",
+           "label": "t:sections.common.heading"
+        },
+        {
+           "type": "collection",
+           "id": "collection_2",
+           "label": "t:sections.common.collection"
+        },
+        {
+           "type": "header",
+           "content": "t:sections.common.block_item"
+        },
+        {
+           "type": "text",
+           "id": "heading_3",
+           "label": "t:sections.common.heading"
+        },
+        {
+           "type": "collection",
+           "id": "collection_3",
+           "label": "t:sections.common.collection"
+        },
+        {
+           "type": "header",
+           "content": "t:sections.common.block_item"
+        },
+        {
+           "type": "text",
+           "id": "heading_4",
+           "label": "t:sections.common.heading"
+        },
+        {
+           "type": "collection",
+           "id": "collection_4",
+           "label": "t:sections.common.collection"
+        },
+        {
+           "type": "header",
+           "content": "t:sections.common.block_item"
+        },
+        {
+           "type": "text",
+           "id": "heading_5",
+           "label": "t:sections.common.heading"
+        },
+        {
+           "type": "collection",
+           "id": "collection_5",
+           "label": "t:sections.common.collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.slideshow.name"
+    }
+  ]
+}
+{%- endschema -%}

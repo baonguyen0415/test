@@ -1,0 +1,13 @@
+.section-banner-multiple .banner-item {
+  overflow: hidden;
+  transition: all .35s ease-in-out; }
+
+.section-banner-multiple .banner-item > a {
+  color: inherit; }
+
+.section-banner-multiple .banner-item > .image__style img, .section-banner-multiple .banner-item a > .image__style img {
+  transition: transform 8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+
+@media (hover: hover) {
+  .section-banner-multiple .banner-item:hover > .image__style img, .section-banner-multiple .banner-item:hover a > .image__style img {
+    transform: scale(1.2); } }

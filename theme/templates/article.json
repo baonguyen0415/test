@@ -1,0 +1,65 @@
+{
+  "wrapper": "div.page-template.page-article-template",
+  "sections": {
+    "breadcrumb": {
+      "type": "breadcrumb",
+      "settings": {
+        "visible": true,
+        "boxed": true,
+        "margin": "0px 0px 30px",
+        "padding": "16px 0px 16px 0px",
+        "bg_full": true,
+        "bg_color": "#ffffff",
+        "text_color": "#a9a9a9",
+        "text_active_color": "#302f2f"
+      }
+    },
+    "main": {
+      "type": "article-template",
+      "blocks": {
+        "f064d1b3-e370-40e3-8dfa-cf8e640e246a": {
+          "type": "sidebar",
+          "settings": {}
+        },
+        "d12006b4-c5e0-4afd-a36c-0e29f903f8e4": {
+          "type": "tags",
+          "settings": {
+            "title": "TAGS",
+            "auto_detect_tags": true,
+            "tags_list": ""
+          }
+        },
+        "f779d975-28d2-4f28-b60f-cf62c6d9a1bc": {
+          "type": "menu",
+          "settings": {
+            "title": "CATEGORIES",
+            "menu": "information-footer"
+          }
+        },
+        "65081af5-885f-46f6-b110-3ee0d2ba7d10": {
+          "type": "featured-blogs",
+          "settings": {
+            "title": "TOP STORIES",
+            "blog": "in-the-news",
+            "limit": 5,
+            "items_spacing": "16px"
+          }
+        }
+      },
+      "block_order": [
+        "f064d1b3-e370-40e3-8dfa-cf8e640e246a",
+        "d12006b4-c5e0-4afd-a36c-0e29f903f8e4",
+        "f779d975-28d2-4f28-b60f-cf62c6d9a1bc",
+        "65081af5-885f-46f6-b110-3ee0d2ba7d10"
+      ],
+      "settings": {
+        "comment_form_title": "Leave a Comment",
+        "comment_form_subtitle": "<p>Your email address will not be published. Required fields are marked *<\/p>"
+      }
+    }
+  },
+  "order": [
+    "breadcrumb",
+    "main"
+  ]
+}

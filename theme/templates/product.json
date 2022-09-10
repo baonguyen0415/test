@@ -1,0 +1,79 @@
+{
+  "wrapper": "div.page-template.page-product-template",
+  "sections": {
+    "main": {
+      "type": "product-template",
+      "blocks": {
+        "d8de22e8-4f81-4bef-9aab-818e90ac52c1": {
+          "type": "menu",
+          "settings": {
+            "heading": "",
+            "menu": "all-categories"
+          }
+        },
+        "7e7087eb-26e6-4878-9ff2-c1440d2ec2b2": {
+          "type": "products-listing",
+          "settings": {
+            "sb_latest_product_title": "Latest Products",
+            "sb_latest_product_col": "accessories",
+            "limit": 8
+          }
+        },
+        "57f3c56f-6611-47ba-a2f8-103a28e14040": {
+          "type": "page",
+          "settings": {
+            "heading": "Shipping & Returns",
+            "page": "terms-conditions"
+          }
+        }
+      },
+      "block_order": [
+        "d8de22e8-4f81-4bef-9aab-818e90ac52c1",
+        "7e7087eb-26e6-4878-9ff2-c1440d2ec2b2",
+        "57f3c56f-6611-47ba-a2f8-103a28e14040"
+      ],
+      "settings": {
+        "show_dynamic_checkout": true,
+        "show_vendor": true,
+        "show_sku": true,
+        "show_short_des": true,
+        "show_countdown_timer": true,
+        "status_variant_picker": "hide",
+        "show_inventory_quantity": true,
+        "inventory_threshold": 10,
+        "enable_notifications_subscribe": true,
+        "notifications_subscribe_label": "<p>Notify me when available<\/p>",
+        "notifications_subscribe_email_placeholder": "Enter your email",
+        "notifications_subscribe_button_submit": "NOTIFY ME",
+        "notification_subcribe_message_heading": "Notify me When Available",
+        "notification_subcribe_message_subheading": "You will receive an email when the product is available.",
+        "secure_image": "shopify:\/\/shop_images\/pay-right-450x.png",
+        "multi_tabs": "heading",
+        "sidebar_mode": "left"
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "bg_color": "",
+        "margin": "0 0 55px 0",
+        "padding": "",
+        "items_resp": "6,5,4,3,2",
+        "items_spacing": "0",
+        "heading": "Related products",
+        "source_from": "current-collection",
+        "static_collection": "accessories",
+        "limit": 10,
+        "loop": false,
+        "controls": true,
+        "dots": false,
+        "autoplay": false,
+        "autoplay_timeout": 4
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products"
+  ]
+}

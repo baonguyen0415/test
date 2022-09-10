@@ -1,0 +1,49 @@
+{
+  "wrapper": "div.page-template.page-blog-template.page-blog-template-v2",
+  "sections": {
+    "main": {
+      "type": "blog-template",
+      "blocks": {
+        "999feaf5-1157-4d4a-b832-495ef53fb00b": {
+          "type": "menu",
+          "settings": {
+            "title": "Categories",
+            "menu": "all-categories"
+          }
+        },
+        "d0bfec7c-be7d-4bc6-af85-4fd0f2e2965f": {
+          "type": "featured-blogs",
+          "settings": {
+            "title": "Top Stories",
+            "blog": "news",
+            "limit": 5,
+            "items_spacing": "15px"
+          }
+        },
+        "004dd684-cd8f-484b-bf53-326c8f634617": {
+          "type": "tags",
+          "settings": {
+            "title": "Tags",
+            "auto_detect_tags": true,
+            "tags_list": "Russian Car,Tools & Accessorie"
+          }
+        }
+      },
+      "block_order": [
+        "999feaf5-1157-4d4a-b832-495ef53fb00b",
+        "d0bfec7c-be7d-4bc6-af85-4fd0f2e2965f",
+        "004dd684-cd8f-484b-bf53-326c8f634617"
+      ],
+      "settings": {
+        "margin": "30px 0px 0px 0px",
+        "padding": "",
+        "layout": "right-sidebar",
+        "item_per_page": 3,
+        "items_resp": "1"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

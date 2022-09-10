@@ -1,0 +1,64 @@
+{%- assign header_overlay = settings.header_overlay -%}
+{%- if settings.enable_announbar -%}{%- section 'announcement-bar' -%}{%- endif -%}
+
+<div class="header-group{% if header_overlay %} header-overlay{% endif %}">
+  {%- if settings.enable_topbar -%}{%- section 'topbar' -%}{%- endif -%}
+  
+  <header class="header{% if header_overlay %} header-overlay{% endif %}" id="header" data-sticky="{{settings.header_sticky}}" data-section-id="header-container" data-section-type="header">
+    {%- capture header_section -%}
+      {%- case settings.header_style -%}
+        {%- when 1 -%}
+          {%- section 'header-style-1' -%}
+        {%- when 2 -%}
+          {%- section 'header-style-2' -%}
+        {%- when 3 -%}
+          {%- section 'header-style-3' -%}
+        {%- when 4 -%}
+          {%- section 'header-style-4' -%}
+        {%- when 5 -%}
+          {%- section 'header-style-5' -%}
+        {%- when 6 -%}
+          {%- section 'header-style-6' -%}
+        {%- when 7 -%}
+          {%- section 'header-style-7' -%}
+        {%- when 8 -%}
+          {%- section 'header-style-8' -%}
+        {%- when 9 -%}
+          {%- section 'header-style-9' -%}
+        {%- else -%}
+          {%- section 'header-style-10' -%}
+      {%- endcase -%}
+    {%- endcapture -%}
+
+    {{header_section}}
+    
+    {%- if settings.enable_header_department -%}{%- section 'header-department' -%}{%- endif -%}
+
+    <script type="application/javascript">
+      function insertHeader(){
+        let deskTemplate = document.getElementById("desk-header-template");
+        if(!deskTemplate){
+          return;
+        }
+        if(window.innerWidth >= 992){
+          deskTemplate.insertAdjacentElement('beforebegin', deskTemplate.content.firstElementChild);
+          deskTemplate.remove();
+          document.dispatchEvent(new CustomEvent('desktop-lazyloaded'));
+        }else{
+          window.addEvent('resize', function(){
+            let div = document.createElement('div');
+            div.innerHTML = deskTemplate.innerHTML;
+            deskTemplate.insertAdjacentElement('beforebegin', div.firstElementChild);
+            deskTemplate.remove();
+            document.dispatchEvent(new CustomEvent('desktop-lazyloaded'));
+          }, {once: true});
+        }
+      }
+
+      insertHeader();
+      {%- if request.design_mode -%}
+        document.addEventListener('shopify:section:load', insertHeader);
+      {%- endif -%}
+    </script>
+  </header>
+</div>

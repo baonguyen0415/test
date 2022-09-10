@@ -1,0 +1,26 @@
+{
+  "wrapper": "div.page-template.page-search-template",
+  "sections": {
+    "breadcrumb": {
+      "type": "breadcrumb",
+      "settings": {
+        "visible": true,
+        "boxed": true,
+        "margin": "0px 0px 30px 0px",
+        "padding": "16px 0px 16px 0px",
+        "bg_full": true,
+        "bg_color": "#ffffff",
+        "text_color": "#a9a9a9",
+        "text_active_color": "#302f2f"
+      }
+    },
+    "main": {
+      "type": "search-template",
+      "settings": {}
+    }
+  },
+  "order": [
+    "breadcrumb",
+    "main"
+  ]
+}

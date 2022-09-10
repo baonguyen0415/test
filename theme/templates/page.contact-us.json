@@ -1,0 +1,16 @@
+{
+  "wrapper": "div.page-template.page-contact-us",
+  "sections": {
+    "main": {
+      "type": "section-contact-us",
+
+      "settings": {
+        "heading": "CONTACT US",
+        "subtext": "If you have any questions please send us a message using the adjacent form and we will get back to you as soon as possible"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

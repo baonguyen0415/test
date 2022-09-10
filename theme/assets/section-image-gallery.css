@@ -1,0 +1,15 @@
+.section-image-gallery .image__style {
+  overflow: hidden; }
+
+.section-image-gallery .image__style img {
+  transition: transform 8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+
+@media (hover: hover) {
+  .section-image-gallery .image__style:hover img {
+    transform: scale(1.2); } }
+
+.section-image-gallery .image-gallery_title {
+  margin-top: 16px; }
+
+.section-image-gallery .image-gallery_subtext {
+  margin-top: 6px; }

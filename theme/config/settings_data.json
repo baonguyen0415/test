@@ -1,0 +1,404 @@
+{
+  "current": {
+    "product_review_app": "shopify",
+    "product_review_badge_code": "<span class=\"shopify-product-reviews-badge\" data-id=\"{{ product.id }}\"><\/span>",
+    "product_reviews_widget": "<div id=\"shopify-product-reviews\" data-id=\"{{product.id}}\">{{ product.metafields.spr.reviews }}<\/div>",
+    "page_layout": "container",
+    "enable_announbar": true,
+    "enable_footer_widget": true,
+    "header_sticky": true,
+    "type_header_font": "rubik_n4",
+    "heading_size_1": 46,
+    "heading_weight_1": 500,
+    "heading_size_2": 36,
+    "heading_weight_2": 500,
+    "heading_size_3": 30,
+    "heading_weight_3": 500,
+    "heading_size_4": 26,
+    "heading_weight_4": 500,
+    "heading_size_5": 24,
+    "heading_weight_5": 500,
+    "heading_size_6": 20,
+    "heading_weight_6": 500,
+    "type_body_font": "rubik_n4",
+    "body_font_weight": 400,
+    "main_color": "#fdb819",
+    "body_bg_color": "#f4f4f4",
+    "main_border_color": "#d4d4d4",
+    "body_text_color": "#1e1e1e",
+    "text_other_color": "#a9a9a9",
+    "body_link_color": "#302f2f",
+    "body_link_color_hover": "#fdb819",
+    "price_color": "#302f2f",
+    "price_sale_color": "#ff9923",
+    "price_compare_color": "#a9a9a9",
+    "rating_star_color": "#fdb819",
+    "rating_star_empty_color": "#a9a9a9",
+    "breadcrumb_bg_img": "shopify:\/\/shop_images\/Rectangle_67.jpg",
+    "breadcrumb_color_1": "#a9a9a9",
+    "breadcrumb_color_2": "#302f2f",
+    "btn1_fs": "16px",
+    "btn1_fw": 500,
+    "btn1_cl": "#302f2f",
+    "btn1_bg_cl": "#fdb819",
+    "btn1_hover_bg_cl": "#302f2f",
+    "btn1_border_width": 1,
+    "btn1_border_cl": "#fdb819",
+    "btn1_hover_border_cl": "#302f2f",
+    "btn1_radius": "4px",
+    "btn2_fs": "16px",
+    "btn2_fw": 500,
+    "btn2_bg_cl": "#302f2f",
+    "btn2_hover_cl": "#302f2f",
+    "btn2_hover_bg_cl": "#fdb819",
+    "btn2_border_width": 1,
+    "btn2_border_cl": "#302f2f",
+    "btn2_hover_border_cl": "#fdb819",
+    "btn2_radius": "4px",
+    "input_radius": "4px",
+    "section_heading_margin": "0 0 28px 0",
+    "section_heading_align": "left",
+    "section_heading_cl": "#1e1e1e",
+    "section_heading_fs": "26px",
+    "section_heading_fw": 300,
+    "cart_type": "dropdown",
+    "collection_pagination_type": "infinite",
+    "variant_options_color": "",
+    "variant_options_button": "Size",
+    "variant_options_image": "Color",
+    "variant_options_larger": "Image",
+    "articles_per_page": 3,
+    "blog_pagination_type": "infinite",
+    "enable_quick_view": true,
+    "product_image_ratio": "auto",
+    "product_image_crop": true,
+    "show_vendor": true,
+    "product_title_limit": "2",
+    "product_card_title_fs": "16px",
+    "product_card_vendor_fs": "12px",
+    "product_card_price_fs": "18px",
+    "product_card_price_sale_fs": "18px",
+    "product_card_price_compare_fs": "14px",
+    "search_type": "product,page,article,collection",
+    "store_location_map_key": "pk.eyJ1IjoibnRyYW45NiIsImEiOiJja25rNHBqbzkwN2l0MnFueHpsampvZmJiIn0.VqVNyGHWEfE2T0FFn5T_iQ",
+    "store_location_json": "{\"type\": \"FeatureCollection\",\"features\": [ {\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Point\",\n          \"coordinates\": [\n            -121.9494469,\n            52.13549\n          ]\n        },\n        \"properties\": {\n          \"Store Name\": \"The Rusty Bucket\",\n          \"City\": \"150 Mile House\",\n          \"Country\": \"Canada\",\n          \"Full Address\": \"293 Likely Rd, 150 Mile House, BC 150 Mile House British Columbia Canada\",\n          \"Latitude\": 52.13549,\n          \"Longitude\": -121.9494469\n        }\n      },{\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Point\",\n          \"coordinates\": [\n            -122.2809162,\n            49.0445462\n          ]\n        },\n        \"properties\": {\n          \"Store Name\": \"Ambition Salon\",\n          \"City\": \"Abbotsford\",\n          \"Country\": \"Canada\",\n          \"Full Address\": \"#210 - 34077 Gladys Avenue Abbotsford British Columbia Canada\",\n          \"Latitude\": 49.0445462,\n          \"Longitude\": -122.2809162\n        }\n      },{\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Point\",\n          \"coordinates\": [\n            -122.3204674,\n            49.0521016999999\n          ]\n        },\n        \"properties\": {\n          \"Store Name\": \"Cheam Wellness Group\",\n          \"City\": \"Abbotsford\",\n          \"Country\": \"Canada\",\n          \"Full Address\": \"304-32625 South Fraser Way Abbotsford British Columbia Canada\",\n          \"Latitude\": 49.0521016999999,\n          \"Longitude\": -122.3204674\n        }\n      },{\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Point\",\n          \"coordinates\": [\n            -120.123353,\n            51.1826856\n          ]\n        },\n        \"properties\": {\n          \"Store Name\": \"Rosy Cheeks Boutique\",\n          \"City\": \"Barrière\",\n          \"Country\": \"Canada\",\n          \"Full Address\": \"4614 BarrièreTown Road Barrière British Columbia Canada\",\n          \"Latitude\": 51.1826856,\n          \"Longitude\": -120.123353\n        }\n      },{\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Point\",\n          \"coordinates\": [\n            -123.007186,\n            49.2811893\n          ]\n        },\n        \"properties\": {\n          \"Store Name\": \"Chickadee Boutique\",\n          \"City\": \"Burnaby\",\n          \"Country\": \"Canada\",\n          \"Full Address\": \"4347 Hastings Street Burnaby British Columbia Canada\",\n          \"Latitude\": 49.2811893,\n          \"Longitude\": -123.007186\n        }\n      },{\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Point\",\n          \"coordinates\": [\n            -125.246632,\n            50.0265889999999\n          ]\n        },\n        \"properties\": {\n          \"Store Name\": \"Ocean Mountain Yoga\",\n          \"City\": \"Campbell River\",\n          \"Country\": \"Canada\",\n          \"Full Address\": \"1121 Cedar Street Campbell River British Columbia Canada\",\n          \"Latitude\": 50.0265889999999,\n          \"Longitude\": -125.246632\n        }\n      },{\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Point\",\n          \"coordinates\": [\n            -121.9640516,\n            49.1055831\n          ]\n        },\n        \"properties\": {\n          \"Store Name\": \"Luna Float\",\n          \"City\": \"Chilliwack\",\n          \"Country\": \"Canada\",\n          \"Full Address\": \"​101-45645 Tamihi Way Chilliwack British Columbia Canada\",\n          \"Latitude\": 49.1055831,\n          \"Longitude\": -121.9640516\n        }\n      },{\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Point\",\n          \"coordinates\": [\n            -113.5666301,\n            53.4532199999999\n          ]\n        },\n        \"properties\": {\n          \"Store Name\": \"Jilly's Boutique\",\n          \"City\": \"Edmonton\",\n          \"Country\": \"Canada\",\n          \"Full Address\": \"14227-23 Avenue NW Edmonton Alberta Canada\",\n          \"Latitude\": 53.4532199999999,\n          \"Longitude\": -113.5666301\n        }\n      },{\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Point\",\n          \"coordinates\": [\n            -113.6029826,\n            53.4354929\n          ]\n        },\n        \"properties\": {\n          \"Store Name\": \"Little Leaf Baby\",\n          \"City\": \"Edmonton\",\n          \"Country\": \"Canada\",\n          \"Full Address\": \"5232 Windermere Boulevard Edmonton Alberta Canada\",\n          \"Latitude\": 53.4354929,\n          \"Longitude\": -113.6029826\n        }\n      },{\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Point\",\n          \"coordinates\": [\n            -106.6247452,\n            52.1153213\n          ]\n        },\n        \"properties\": {\n          \"Store Name\": \"Cravings\",\n          \"City\": \"Saskatoon\",\n          \"Country\": \"Canada\",\n          \"Full Address\": \"3  2105 8th Street East Saskatoon Saskatchewan Canada\",\n          \"Latitude\": 52.1153213,\n          \"Longitude\": -106.6247452\n        }\n      },{\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Point\",\n          \"coordinates\": [\n            -80.9702052999999,\n            43.370982\n          ]\n        },\n        \"properties\": {\n          \"Store Name\": \"Relish Day Spa\",\n          \"City\": \"Stratford\",\n          \"Country\": \"Canada\",\n          \"Full Address\": \"397 Ontario Street Stratford Ontario Canada\",\n          \"Latitude\": 43.370982,\n          \"Longitude\": -80.9702052999999\n        }\n      },{\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Point\",\n          \"coordinates\": [\n            -79.3907639,\n            43.6792367\n          ]\n        },\n        \"properties\": {\n          \"Store Name\": \"Macpherson Toy House\",\n          \"City\": \"Toronto\",\n          \"Country\": \"Canada\",\n          \"Full Address\": \"103 - 1128 Yonge Street Toronto Ontario Canada\",\n          \"Latitude\": 43.6792367,\n          \"Longitude\": -79.3907639\n        }\n      },{\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Point\",\n          \"coordinates\": [\n            -89.2225519,\n            48.435483\n          ]\n        },\n        \"properties\": {\n          \"Store Name\": \"Ritual Skin Co.\",\n          \"City\": \"Thunder Bay\",\n          \"Country\": \"Canada\",\n          \"Full Address\": \"8 Court Street South Thunder Bay Ontario Canada\",\n          \"Latitude\": 48.435483,\n          \"Longitude\": -89.2225519\n        }\n      },{\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Point\",\n          \"coordinates\": [\n            -71.0699187,\n            42.3417043\n          ]\n        },\n        \"properties\": {\n          \"Store Name\": \"CouCou\",\n          \"City\": \"Boston\",\n          \"Country\": \"USA\",\n          \"Full Address\": \"24 Union Park Street, Boston, MA\",\n          \"Latitude\": 42.3417043,\n          \"Longitude\": -71.0699187\n        }\n      },{\n        \"type\": \"Feature\",\n        \"geometry\": {\n          \"type\": \"Point\",\n          \"coordinates\": [\n            -92.017872,\n            30.204684\n          ]\n        },\n        \"properties\": {\n          \"Store Name\": \"Pascale's Spa\",\n          \"City\": \"Lafayette\",\n          \"Country\": \"USA\",\n          \"Full Address\": \"1118B Coolidge Boulevard, Lafayette, LA\",\n          \"Latitude\": 30.204684,\n          \"Longitude\": -92.017872\n        }\n      } ]}",
+    "enable_ymm_search_tool": false,
+    "ymm_search_data": "https:\/\/cdn.shopify.com\/s\/files\/1\/0582\/6622\/2766\/files\/ymm-3.json?v=1637548568",
+    "enable_age_verification": true,
+    "age_verification_background": "#ff9923",
+    "age_verification_number_color": "#ffffff",
+    "age_verification_number_bg_color": "#1e1e1e",
+    "age_verification_title_color": "#1e1e1e",
+    "age_verification_subtitle_color": "#302f2f",
+    "age_verification_btn_style_1": "custom",
+    "age_verification_btn_color_1": "#ffffff",
+    "age_verification_btn_bg_1": "#1e1e1e",
+    "age_verification_btn_border_1": "#1e1e1e",
+    "age_verification_btn_border_width_1": 1,
+    "age_verification_btn_hover_color_1": "#ffffff",
+    "age_verification_btn_hover_bg_1": "#ff9923",
+    "age_verification_btn_hover_border_1": "#ffffff",
+    "age_verification_btn_label_2": "EXIT",
+    "age_verification_btn_style_2": "custom",
+    "age_verification_btn_color_2": "#ffffff",
+    "age_verification_btn_bg_2": "#ff9923",
+    "age_verification_btn_border_2": "#ffffff",
+    "age_verification_btn_hover_color_2": "#ffffff",
+    "age_verification_btn_hover_bg_2": "#1e1e1e",
+    "age_verification_btn_hover_border_2": "#1e1e1e",
+    "social_icon_color": "#1e1e1e",
+    "social_icon_background": "#d4d4d4",
+    "social_icon_border_color": "rgba(0,0,0,0)",
+    "social_icon_rounded": 4,
+    "social_icon_type_2": "none",
+    "social_icon_type_5": "none",
+    "social_icon_type_6": "none",
+    "payment_gateways_resource": true,
+    "payment_type_1": "image",
+    "payment_image_1": "shopify:\/\/shop_images\/Frame-1.png",
+    "payment_image_2": "shopify:\/\/shop_images\/Frame_67e3711d-6dbf-4902-99f8-6f0c17b3cc21.png",
+    "payment_image_3": "shopify:\/\/shop_images\/Frame.png",
+    "payment_image_4": "shopify:\/\/shop_images\/Frame-2.png",
+    "payment_type_5": "none",
+    "payment_type_6": "none",
+    "checkout_accent_color": "#fdb819",
+    "checkout_button_color": "#fdb819",
+    "store_location_json_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0582\/6622\/2766\/files\/store-location.json?v=1635265165",
+    "review_app": "shopify",
+    "enable_mobilebar": false,
+    "theme_layout": "LTR",
+    "age_verification_btn_custom_color_1": "#ffffff",
+    "age_verification_btn_custom_bg_1": "#1e1e1e",
+    "age_verification_btn_custom_color_2": "#ffffff",
+    "header_google_font": "Rubik",
+    "body_google_font": "Rubik",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "blocks": {
+          "5a2954b0-8890-48e4-9127-f0b92e730e86": {
+            "type": "block-item",
+            "settings": {
+              "content": "<p>Free Shipping on Orders $500<\/p>"
+            }
+          },
+          "e3de9e84-78c7-4a9f-98da-e5e1f3f312af": {
+            "type": "block-item",
+            "settings": {
+              "content": "<p>Free Shipping on Orders $500123<\/p>"
+            }
+          },
+          "bb6ee0f8-00e0-406c-ba22-3c478d7d0015": {
+            "type": "block-item",
+            "settings": {
+              "content": "<p>Free Shipping on Orders $500<\/p>"
+            }
+          },
+          "e67da81d-5d45-49a8-8b82-e060cd7ed0ca": {
+            "type": "content-style",
+            "settings": {
+              "cl": "#ffffff",
+              "fs": "",
+              "fw": 400,
+              "lh": ""
+            }
+          }
+        },
+        "block_order": [
+          "5a2954b0-8890-48e4-9127-f0b92e730e86",
+          "e3de9e84-78c7-4a9f-98da-e5e1f3f312af",
+          "bb6ee0f8-00e0-406c-ba22-3c478d7d0015",
+          "e67da81d-5d45-49a8-8b82-e060cd7ed0ca"
+        ],
+        "settings": {
+          "visible_on_desktop": true,
+          "visible_on_tablet": true,
+          "visible_on_mobile": false,
+          "boxed": true,
+          "margin": "",
+          "padding": "15px",
+          "bg_full": true,
+          "bg_color": "#ed462f",
+          "bg_size": "auto",
+          "bg_position": "center center",
+          "bg_repeat": "no-repeat",
+          "loop": false,
+          "autoplay": true,
+          "autoplay_timeout": 4
+        }
+      },
+      "header-colors": {
+        "type": "header-colors",
+        "blocks": {
+          "e05ca821-0413-4d48-9c08-21bd12c65033": {
+            "type": "desktop_style",
+            "settings": {
+              "top_bg_color": "#1e1e1e",
+              "account_title_color": "#ffffff",
+              "account_label_color": "#a9a9a9",
+              "cart_title_color": "#ffffff",
+              "cart_label_color": "#d4d4d4",
+              "cart_icon_color": "#ffffff",
+              "cart_number_color": "#1e1e1e",
+              "cart_number_bg_color": "#fdb819",
+              "bottom_bg_color": "#fdb819",
+              "store_locator_title_color": "#302f2f",
+              "store_locator_label_color": "#302f2f",
+              "store_locator_icon_color": "#ffffff",
+              "store_locator_icon_bg_color": "#1e1e1e",
+              "vehicle_title_color": "#302f2f",
+              "vehicle_label_color": "#302f2f",
+              "vehicle_icon_color": "#ffffff",
+              "vehicle_icon_bg_color": "#1e1e1e",
+              "nav_color": "#302f2f",
+              "nav_hover_color": "#ffffff"
+            }
+          },
+          "a13e9e68-35c2-41bf-b30b-b48c83283c31": {
+            "type": "mobile_style",
+            "settings": {
+              "top_bg_color": "#1e1e1e",
+              "account_title_color": "#ffffff",
+              "account_label_color": "#ffffff",
+              "cart_title_color": "#ffffff",
+              "cart_label_color": "",
+              "cart_icon_color": "#ffffff",
+              "cart_number_color": "#1e1e1e",
+              "cart_number_bg_color": "#fdb819",
+              "bottom_bg_color": "#fdb819",
+              "store_locator_title_color": "",
+              "store_locator_label_color": "",
+              "store_locator_icon_color": "",
+              "store_locator_icon_bg_color": "",
+              "vehicle_title_color": "",
+              "vehicle_label_color": "",
+              "vehicle_icon_color": "",
+              "vehicle_icon_bg_color": ""
+            }
+          }
+        },
+        "block_order": [
+          "e05ca821-0413-4d48-9c08-21bd12c65033",
+          "a13e9e68-35c2-41bf-b30b-b48c83283c31"
+        ],
+        "settings": {}
+      },
+      "header-style-1": {
+        "type": "header-style-1",
+        "blocks": {
+          "f1d38b07-7cb4-4213-aa31-ae3ed7530b55": {
+            "type": "mega-trigger",
+            "settings": {
+              "mega_trigger_title": "Shop",
+              "mega_trigger_width": 100
+            }
+          },
+          "8a612a9b-4d14-468f-9c1e-f1785ef60c8f": {
+            "type": "mega-menu",
+            "settings": {
+              "title": "[+] Menu",
+              "max_width": 25,
+              "menu": "shop-mega-menu-1"
+            }
+          },
+          "b4f9e545-8b22-4472-bf93-33295c33341f": {
+            "type": "mega-menu",
+            "settings": {
+              "title": "[+] Menu",
+              "max_width": 25,
+              "menu": "shop-mega-menu-2"
+            }
+          },
+          "4ae4a69d-ba88-4899-9dc3-9dfa630c5b28": {
+            "type": "mega-menu",
+            "settings": {
+              "title": "[+] Menu",
+              "max_width": 25,
+              "menu": "shop-mega-menu-3"
+            }
+          },
+          "2028062e-7b53-458d-845d-295ade35e966": {
+            "type": "mega-banner",
+            "settings": {
+              "title": "[+] Banner",
+              "max_width": 25,
+              "banner_show_1": false,
+              "banner_image_1": "shopify:\/\/shop_images\/Group_800.jpg",
+              "banner_link_1": "shopify:\/\/products\/product-sample-39",
+              "banner_label_1": "",
+              "banner_show_2": true,
+              "banner_image_2": "shopify:\/\/shop_images\/mega-menu-banner.png",
+              "banner_link_2": "",
+              "banner_label_2": ""
+            }
+          }
+        },
+        "block_order": [
+          "f1d38b07-7cb4-4213-aa31-ae3ed7530b55",
+          "8a612a9b-4d14-468f-9c1e-f1785ef60c8f",
+          "b4f9e545-8b22-4472-bf93-33295c33341f",
+          "4ae4a69d-ba88-4899-9dc3-9dfa630c5b28",
+          "2028062e-7b53-458d-845d-295ade35e966"
+        ],
+        "settings": {
+          "boxed": true,
+          "logo_type": "image",
+          "logo_image": "shopify:\/\/shop_images\/logo_autopart.png",
+          "logo_svg": "",
+          "logo_max_width": 250,
+          "mobile_logo_max_width": 155,
+          "menu": "main-mega-menu",
+          "contact_us_heading": "NEED HELP? CONTACT US",
+          "contact_us_phone": "<p><a href=\"tel:+2734662455198\">+27 34 66 2455-198<\/a><br\/>Mon-Fri 8:00 to 19:00<\/p>",
+          "contact_us_email": "<p><a href=\"mailto: info@autoparts.com\">info@autoparts.com<\/a><\/p>"
+        }
+      },
+      "footer-widget": {
+        "type": "footer-widget",
+        "blocks": {
+          "1d3fc7da-4413-463c-ac86-2135f7c7d2ec": {
+            "type": "information",
+            "settings": {
+              "logo_type": "image",
+              "logo_max_width": "250px",
+              "logo_image": "shopify:\/\/shop_images\/logo.png",
+              "logo_svg": "",
+              "address": "17 Princess Road, London, Greater London NW1 8JR, UK",
+              "address_custom_icon": "",
+              "phone_1": "+27 34 66 2455-198",
+              "phone_2": "Mon-Fri 8:00 to 19:00",
+              "phone_custom_icon": "",
+              "email": "info@autoparts.com",
+              "email_custom_icon": "",
+              "enable_social": true,
+              "social_title": "FOLLOW US"
+            }
+          },
+          "ff552d97-611d-456e-90c6-3657732f4722": {
+            "type": "menu",
+            "settings": {
+              "title": "INFORMATION",
+              "menu": "information-footer"
+            }
+          },
+          "7569ce54-f3e0-4ecc-8a54-3885cf0781c2": {
+            "type": "menu",
+            "settings": {
+              "title": "WHY BUY FROM US",
+              "menu": "why-buy-from-us"
+            }
+          },
+          "e4ccef52-e10e-4ff8-ad55-b0db27388436": {
+            "type": "newsletter",
+            "settings": {
+              "title": "SUBSCRIBE AND GET 5% OFF DISCOUNT",
+              "subtext": "Subscribe to our Newsletter and get bonuses for the next purchase",
+              "newsletter_type": "shopify",
+              "newsletter_url": "",
+              "newsletter_placholder": "Enter your email",
+              "enable_payment_gateways": true,
+              "payment_gateways_title": "WE ACCEPT:",
+              "input_border_color": "#302f2f",
+              "input_text_color": "#a9a9a9",
+              "input_background_color": "rgba(0,0,0,0)",
+              "button_style": "1"
+            }
+          }
+        },
+        "block_order": [
+          "1d3fc7da-4413-463c-ac86-2135f7c7d2ec",
+          "ff552d97-611d-456e-90c6-3657732f4722",
+          "7569ce54-f3e0-4ecc-8a54-3885cf0781c2",
+          "e4ccef52-e10e-4ff8-ad55-b0db27388436"
+        ],
+        "settings": {
+          "boxed": true,
+          "margin": "",
+          "padding": "66px 0px 20px 0px, 66px 0 15px 0",
+          "grid_layout": "30% 20% 20% 30%, 50% 50%, 100%",
+          "items_spacing": "15px",
+          "bg_full": true,
+          "bg_color": "#1e1e1e",
+          "text_1_color": "#ffffff",
+          "text_2_color": "#a9a9a9"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "boxed": true,
+          "padding": "15px 0px",
+          "border_top": "#212121",
+          "bg_full": true,
+          "bg_color": "#1e1e1e",
+          "copyright": "<p>© 2021 <a href=\"https:\/\/www.shopify.com\/?utm_campaign=poweredby&utm_medium=shopify&utm_source=onlinestore\" target=\"_blank\">Powered by Shopify<\/a><\/p>",
+          "copyright_color": "#a9a9a9",
+          "enable_currencies": true,
+          "currencies_border_color": "#302f2f",
+          "currencies_color": "#d4d4d4"
+        }
+      }
+    },
+    "content_for_index": []
+  }
+}

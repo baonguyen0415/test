@@ -1,0 +1,40 @@
+{
+  "wrapper": "div.page-template.page-cart",
+  "sections": {
+    "main": {
+      "type": "cart-template",
+      "settings": {
+        "show_vendor": true,
+        "show_sku": true,
+        "show_properties": true,
+        "show_order_notes": true,
+        "show_estimated_shipping": true,
+        "estimated_shipping_default_country": "United States"
+      }
+    },
+    "1627565819e587cc2a": {
+      "type": "featured-collection",
+      "settings": {
+        "boxed": true,
+        "margin": "0 0 60px",
+        "padding": "",
+        "collection": "auto-body-styling-accessories",
+        "items_resp": "4,3,2,1.3",
+        "items_spacing": "28px",
+        "limit": 10,
+        "bg_full": true,
+        "bg_color": "",
+        "heading": "<p><strong>YOU MIGHT ALSO<\/strong> LIKES<\/p>",
+        "loop": false,
+        "controls": true,
+        "dots": false,
+        "autoplay": false,
+        "autoplay_timeout": 4
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1627565819e587cc2a"
+  ]
+}
